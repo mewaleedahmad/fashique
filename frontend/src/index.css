@@ -2,9 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+html,body{
+  background-color: #f8f9fa;
+  font-family : "Outfit",serif;
+} 
+
+@font-face {
+  font-family: 'Prata';
+  src: url('./assets/fonts/Prata-Regular.woff2') format('woff2'),
+       url('./assets/fonts/Prata-Regular.woff') format('woff'),
+       url('./assets/fonts/Prata-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('./assets/fonts/Outfit-VariableFont_wght.woff2') format('woff2'),
+       url('./assets/fonts/Outfit-VariableFont_wght.woff') format('woff'),
+       url('./assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@layer base {
+  h1{
+    font-family : "Prada",serif;
+    font-weight : 700
+  }
+  h3 {
+    font-family : "Outfit",serif;
+    font-weight : 600
+  }
+
+}
+
 @layer components{
     .layout {
-        @apply px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw];
+        @apply px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] ;
       }
       
 }

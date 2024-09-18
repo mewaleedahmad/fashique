@@ -8,24 +8,24 @@ const Navbar = () => {
   const [isMenuVisible,setIsMenuVisible]=useState(false)
 
   return (
-    <div className="flex justify-between items-center py-5">
+    <div className="flex justify-between items-center py-5 ">
 
         <div className="nav-logo">
-            <p className="font-bold text-xl">LOGO</p>
+            <p className="font-bold text-2xl text-darkPrimary">LOGO</p>
         </div>
 
         <div className="nav-links">
-            <ul className="hidden sm:flex gap-5 text-sm font-medium text-gray-800">
+            <ul className="hidden sm:flex gap-5 text-sm font-medium text-darkPrimary">
               {NavLinks.map((item)=>(
                 <NavLink to={item.route} key={item.id} className="flex flex-col  justify-center  items-center">
-                <p className="pb-1">{item.link}</p>
-                <hr className="w-2/4 bg-gray-800  h-[2px] hidden"/>
+                <h3 className="pb-1 ">{item.link}</h3>
+                <hr className="w-2/4 bg-darkPrimary  h-[2px] hidden "/>
                 </NavLink>
               ))}
             </ul>
         </div>
 
-        <div className="nav-buttons">
+        <div className="nav-buttons"> 
           <div className="flex justify-center items-center gap-5">
 
             <Link className="search">
@@ -35,10 +35,10 @@ const Navbar = () => {
             <div className="profile relative group">
               <img src={assets.profile_icon} className="w-5 cursor-pointer" alt="profile"/>
               <div className="group-hover:block right-[-6px] hidden absolute pt-2">
-                <div className="flex flex-col rounded-md px-6 py-3 justify-center items-left  gap-2 w-36 bg-slate-100  font-medium ">
-                  <Link className="cursor-pointer text-gray-600 hover:text-black">My Profile</Link>
-                  <Link className="cursor-pointer text-gray-600 hover:text-black">Orders</Link>
-                  <Link className="cursor-pointer text-gray-600 hover:text-black">Logout</Link>
+                <div className="flex flex-col rounded-md px-6 py-3 justify-center items-left  gap-2 w-36 bg-lightSecondary  font-semibold ">
+                  <Link className="cursor-pointer text-darkSecondary hover:text-darkPrimary">My Profile</Link>
+                  <Link className="cursor-pointer text-darkSecondary hover:text-darkPrimary">Orders</Link>
+                  <Link className="cursor-pointer text-darkSecondary hover:text-darkPrimary">Logout</Link>
                 </div>
               </div>
             </div>
@@ -50,18 +50,18 @@ const Navbar = () => {
                 </div>
               </Link>
 
-              <Link className="menu-btn ">
+              <Link className="menu-btn overflow-hidden">
               <img src={assets.menu_icon} onClick={()=>setIsMenuVisible(true)} className={`${isMenuVisible ? "hidden" :"flex"} flex sm:hidden cursor-pointer w-5`}/>
-              <div className={`mobile-menu ${isMenuVisible ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 ease overflow-hidden flex-col items-start absolute top-0 font-medium py-4 left-0 block z-50  w-full bg-white text-gray-800 `}>
+              <div className={`mobile-menu ${isMenuVisible ? "flex" : "hidden"} transition-transform duration-300 ease overflow-hidden flex-col items-start absolute top-0 font-medium py-4 left-0 block z-50  w-full bg-lightPrimary text-darkPrimary `}>
                 <div className="flex justify-start items-center gap-3 px-2 pb-3" onClick={()=>setIsMenuVisible(false)}>
                 <img src={assets.dropdown_icon} className="rotate-180 h-4" />
-                <p className="text-lg font-medium">Back</p>
+                <h3 className="text-lg ">Back</h3>
                 </div>
                 <p className="w-screen h-[1px] bg-gray-200 "/>
               {NavLinks.map((item)=>(
                 <Link to={item.route} key={item.id} className="mob" onClick={()=>setIsMenuVisible(false)} >
-                  <p className={`py-2 px-4 hover:bg-black hover:text-white `}>{item.link}</p>
-                  <hr className="w-screen h-[1px] bg-gray-200 "/>
+                  <h3 className={`py-2 px-4 hover:bg-darkPrimary hover:text-lightPrimary `}>{item.link}</h3>
+                  <hr className="w-screen h-[1px] bg-lightSecondary "/>
                 </Link>
               ))}
               </div>

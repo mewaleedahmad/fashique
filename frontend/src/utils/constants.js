@@ -6,19 +6,25 @@ export const NavLinks = [
     },
     {
       id:2,
-      link : "COLLECTION",
-      route : "/collection"
+      link : "MEN",
+      route : "/men"
     },
     {
       id:3,
-      link : "ABOUT",
-      route : "/about"
+      link : "WOMEN",
+      route : "/women"
     },
     {
       id:4,
-      link : "CONTACT",
-      route : "/contact"
-    }
+      link : "KIDS",
+      route : "/kids"
+    },
+    {
+      id : 5,
+      link : "DEALS",
+      route : '/deals'
+    },
+    
   ]
 
   
