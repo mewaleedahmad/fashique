@@ -6,7 +6,6 @@ html,body{
   background-color: #f8f9fa;
   font-family : "Outfit",serif;
 } 
-
 @font-face {
   font-family: 'Prata';
   src: url('./assets/fonts/Prata-Regular.woff2') format('woff2'),
@@ -33,7 +32,6 @@ html,body{
     font-family : "Outfit",serif;
     font-weight : 600
   }
-
 }
 
 @layer components{

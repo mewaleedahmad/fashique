@@ -11,11 +11,11 @@ const Navbar = () => {
     <div className="flex justify-between items-center py-5 ">
 
         <div className="nav-logo">
-            <p className="font-bold text-2xl text-darkPrimary">LOGO</p>
+            <p className="font-bold text-3xl text-darkPrimary">LOGO</p>
         </div>
 
         <div className="nav-links">
-            <ul className="hidden sm:flex gap-5 text-sm font-medium text-darkPrimary">
+            <ul className="hidden sm:flex gap-5 text-md font-medium text-darkPrimary">
               {NavLinks.map((item)=>(
                 <NavLink to={item.route} key={item.id} className="flex flex-col  justify-center  items-center">
                 <h3 className="pb-1 ">{item.link}</h3>
@@ -26,7 +26,7 @@ const Navbar = () => {
         </div>
 
         <div className="nav-buttons"> 
-          <div className="flex justify-center items-center gap-5">
+          <div className="flex justify-center items-center gap-5 py-4">
 
             <Link className="search">
             <img src={assets.search_icon} className="w-5" alt="search"/>
@@ -52,7 +52,7 @@ const Navbar = () => {
 
               <Link className="menu-btn overflow-hidden">
               <img src={assets.menu_icon} onClick={()=>setIsMenuVisible(true)} className={`${isMenuVisible ? "hidden" :"flex"} flex sm:hidden cursor-pointer w-5`}/>
-              <div className={`mobile-menu ${isMenuVisible ? "flex" : "hidden"} transition-transform duration-300 ease overflow-hidden flex-col items-start absolute top-0 font-medium py-4 left-0 block z-50  w-full bg-lightPrimary text-darkPrimary `}>
+              <div className={`mobile-menu ${isMenuVisible ? "flex h-screen" : "hidden"} transition-transform duration-300 ease overflow-hidden flex-col items-start absolute top-0 font-medium py-4 left-0 block z-50  w-full bg-lightPrimary text-darkPrimary `}>
                 <div className="flex justify-start items-center gap-3 px-2 pb-3" onClick={()=>setIsMenuVisible(false)}>
                 <img src={assets.dropdown_icon} className="rotate-180 h-4" />
                 <h3 className="text-lg ">Back</h3>
