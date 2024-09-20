@@ -3,34 +3,26 @@
 @tailwind utilities;
 
 html,body{
-  background-color: #f8f9fa;
-  font-family : "Outfit",serif;
+  background-color: #eae9e5;
+  font-family : "Macan",serif;
 } 
 @font-face {
-  font-family: 'Prata';
-  src: url('./assets/fonts/Prata-Regular.woff2') format('woff2'),
-       url('./assets/fonts/Prata-Regular.woff') format('woff'),
-       url('./assets/fonts/Prata-Regular.ttf') format('truetype');
+  font-family: 'Gooper';
+  src: url('./assets/fonts/Gooper-regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Outfit';
-  src: url('./assets/fonts/Outfit-VariableFont_wght.woff2') format('woff2'),
-       url('./assets/fonts/Outfit-VariableFont_wght.woff') format('woff'),
-       url('./assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
-  font-weight: 300;
+  font-family: 'Macan';
+  src: url('./assets/fonts/Macan-Regular.woff2') format('woff2');
+  font-weight: normal;
   font-style: normal;
 }
 
 @layer base {
-  h1{
-    font-family : "Prada",serif;
+  h1,h3{
+    font-family : "Gooper",serif;
     font-weight : 700
-  }
-  h3 {
-    font-family : "Outfit",serif;
-    font-weight : 600
   }
 }
 
