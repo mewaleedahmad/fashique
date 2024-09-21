@@ -16,7 +16,7 @@ const carouselItems = [
   },
   {
     title: "KIDS COLLECTION ",
-    image: assets.kids_hero,
+    image: assets.kid_hero,
     route: "/kids"
   }
 ];
@@ -30,7 +30,7 @@ const Hero = () => {
       setCurrentIndex((prevIndex) => 
         prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1
       );
-    }, 4000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
@@ -61,10 +61,10 @@ const Hero = () => {
       onClick={handleDivClick}
     >
       <div className="absolute inset-0 flex items-center justify-between p-4">
-        <button onClick={goToPrevious} className="p-2 bg-white rounded-full shadow-md hover:bg-gray-100 z-10">
+        <button onClick={goToPrevious} className="p-2 bg-lightSecondary rounded-full shadow-md hover:bg-lightPrimary z-10">
           <ChevronLeft size={24} />
         </button>
-        <button onClick={goToNext} className="p-2 bg-white rounded-full shadow-md hover:bg-gray-100 z-10">
+        <button onClick={goToNext} className="p-2 bg-lightSecondary rounded-full shadow-md hover:bg-lightPrimary z-10">
           <ChevronRight size={24} />
         </button>
       </div>
@@ -86,7 +86,7 @@ const Hero = () => {
             <p className='w-12 md:w-20 lg:24 h-[1.5px] bg-darkPrimary'></p>
           </div>
         </div>
-        <div className="w-full md:w-1/2 bg-gray-200">
+        <div className="w-full md:w-1/2  bg-gray-200">
           <img src={currentSlide.image} alt={currentSlide.title} className="w-full object-contain" />
         </div>
       </div>
