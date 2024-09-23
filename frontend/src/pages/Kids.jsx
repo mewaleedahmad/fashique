@@ -1,7 +1,10 @@
+import Collection from "../components/Collection"
 
 const Kids = () => {
   return (
-    <div>Kids</div>
+    <div>
+      <Collection page_title="KIDS"/>
+    </div>
   )
 }
 

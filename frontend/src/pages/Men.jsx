@@ -1,7 +1,10 @@
+import Collection from "../components/Collection"
 
 const Men = () => {
   return (
-    <div>Men</div>
+    <div>
+      <Collection page_title="MEN"/>
+    </div>
   )
 }
 

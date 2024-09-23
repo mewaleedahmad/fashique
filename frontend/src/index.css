@@ -24,6 +24,9 @@ html,body{
     font-family : "Gooper",serif;
     font-weight : 700
   }
+  h2{
+    @apply text-4xl font-bold ;
+  }
 }
 
 @layer components{

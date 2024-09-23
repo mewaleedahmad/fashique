@@ -99,6 +99,7 @@ export const assets = {
     kid_hero,
     women_hero,
     men_hero,
+    p_img4
 
    
 }

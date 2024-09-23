@@ -57,7 +57,7 @@ const Hero = () => {
 
   return (
     <div
-      className="relative w-full lg:h-[70vh] overflow-hidden mt-4 bg-lightPrimary border border-darkPrimary cursor-pointer"
+      className="relative w-full lg:h-[70vh] overflow-hidden  bg-lightPrimary border mt-4 border-darkPrimary cursor-pointer"
       onClick={handleDivClick}
     >
       <div className="absolute inset-0 flex items-center justify-between p-4">

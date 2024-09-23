@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isMenuVisible,setIsMenuVisible]=useState(false)
 
   return (
-    <div className="flex   justify-between items-center py-5 ">
+    <div className="flex  justify-between items-center py-5 ">
 
         <div className="nav-logo">
             <h1 className="font-bold text-xl md:text-2xl  xl:text-3xl text-darkPrimary">Fashique</h1>
