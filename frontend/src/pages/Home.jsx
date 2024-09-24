@@ -7,7 +7,8 @@ const Home = () => {
     <div>
       <Hero />
       <MainTitle title="MEN" className="pt-14"/>
-      <HomeItems className="pt-20"/>
+      <HomeItems for="Men" className="pt-20"/>
+      {/* <HomeItems for="Women" className="pt-20"/> */}
     </div>
   )
 }

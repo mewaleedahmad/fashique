@@ -15,7 +15,7 @@ import Navbar from "./components/Navbar"
 
 const App = () => {
   return (
-    <div className="layout">
+    <div className="layout flex flex-col min-h-screen">
         <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>

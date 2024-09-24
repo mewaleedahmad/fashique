@@ -1,6 +1,7 @@
 import { products } from "../assets/frontend_assets/assets";
 
-const menItems = products.slice(0,10)
+const menItems = products.filter(item => item.category === "Men").slice(0,10)
+// eslint-disable-next-line react/prop-types
 export default function App({className}) {
   return (
     <div className={`gap-6 grid grid-cols-2 sm:grid-cols-5 grid-rows-2  w-full ${className}`}>

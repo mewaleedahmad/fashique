@@ -10,7 +10,6 @@ const productPrice = [
   "4000 - 5000",
   "Above 5000 ",
 ];
-
 // eslint-disable-next-line react/prop-types
 const Collection = ({ page_title }) => {
   return (

@@ -25,7 +25,7 @@ export default {
           secondary: "#f5f5f5", // Override DaisyUI's secondary color
           accent: "#212529", // Override DaisyUI's accent color
           neutral: "#6c757d", // Override DaisyUI's neutral color
-          "base-100": "#ffffff", // Override background
+          "base-100": "#eae9e5", // Override background
         },
       },
     ],
