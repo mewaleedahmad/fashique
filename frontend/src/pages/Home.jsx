@@ -1,9 +1,13 @@
 import Hero from "../components/Hero"
+import HomeItems from "../components/HomeItems"
+import MainTitle from "../components/MainTitle"
 // 
 const Home = () => {
   return (
     <div>
       <Hero />
+      <MainTitle title="MEN" className="pt-14"/>
+      <HomeItems className="pt-20"/>
     </div>
   )
 }

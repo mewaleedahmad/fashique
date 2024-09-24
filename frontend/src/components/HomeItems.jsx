@@ -1,9 +1,10 @@
 import { products } from "../assets/frontend_assets/assets";
 
-export default function Card() {
+const menItems = products.slice(0,10)
+export default function App({className}) {
   return (
-    <div className="gap-6 grid grid-cols-2 sm:grid-cols-3  w-full">
-      {products.map((item) => (
+    <div className={`gap-6 grid grid-cols-2 sm:grid-cols-5 grid-rows-2  w-full ${className}`}>
+      {menItems.map((item) => (
         <div className="card card-compact cursor-pointer bg-lightPrimary  shadow-xl" key={item._id}>
         <figure>
           <img

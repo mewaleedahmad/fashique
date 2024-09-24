@@ -1,6 +1,10 @@
+import daisyui from "daisyui"
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -12,5 +16,19 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [daisyui],
+  daisyui: {
+    themes: [
+      {
+        myCustomTheme: {
+          primary: "#eae9e5", // Override DaisyUI's primary color
+          secondary: "#f5f5f5", // Override DaisyUI's secondary color
+          accent: "#212529", // Override DaisyUI's accent color
+          neutral: "#6c757d", // Override DaisyUI's neutral color
+          "base-100": "#ffffff", // Override background
+        },
+      },
+    ],
+  },
+  
 };

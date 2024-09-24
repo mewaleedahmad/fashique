@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 html,body{
+  width: 100%;
+  height: 100%;
   background-color: #eae9e5;
   font-family : "Macan",serif;
+  
 } 
 @font-face {
   font-family: 'Gooper';
@@ -31,7 +34,7 @@ html,body{
 
 @layer components{
     .layout {
-        @apply px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] ;
+        @apply px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] w-full h-screen ;
       }
       
 }
