@@ -53,9 +53,9 @@ const Collection = ({ page_title }) => {
             <MainTitle title={page_title} />
             <div>
               <select className="px-2 py-4 bg-lightPrimary outline-none shadow-sm rounded-md text-md font-bold border-darkSecondary border">
-              <option className="font-normal " selected>Sort By : Relevant </option>
-              <option className="font-normal ">Sort By : High to Low </option>
-              <option className="font-normal ">Sort By : Low to High</option>
+              <option  className="font-normal " selected>Sort By : Relevant </option>
+              <option  className="font-normal ">Sort By : High to Low </option>
+              <option  className="font-normal ">Sort By : Low to High</option>
             </select>
              
             </div>

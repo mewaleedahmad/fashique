@@ -1,9 +1,10 @@
 import { products } from "../assets/frontend_assets/assets";
 
+const filterProducts = products.filter(item => item.category === "Men")
 export default function Card() {
   return (
     <div className="gap-6 grid grid-cols-2 sm:grid-cols-3  w-full">
-      {products.map((item) => (
+      {filterProducts.map((item) => (
         <div className="card card-compact cursor-pointer bg-lightPrimary  shadow-xl" key={item._id}>
         <figure>
           <img
