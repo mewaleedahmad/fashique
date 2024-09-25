@@ -3,7 +3,7 @@ import Collection from "../components/Collection"
 const Men = () => {
   return (
     <div className="w-full ">
-      <Collection page_title="MEN"/>
+      <Collection title1="MEN" title2="COLLECTION"/>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import "../app.css"
 import { NavLinks } from "../utils/constants"
 import { assets } from "../assets/frontend_assets/assets"
 import { useState } from "react"
+import { ChevronLeft } from "lucide-react"
 
 const Navbar = () => {
   const [isMenuVisible,setIsMenuVisible]=useState(false)
@@ -11,7 +12,9 @@ const Navbar = () => {
     <div className="flex  justify-between items-center py-5 ">
 
         <div className="nav-logo">
+          <Link to="/" className="cursor-pointer">
             <h1 className="font-bold text-xl md:text-2xl  xl:text-3xl text-darkPrimary">Fashique</h1>
+          </Link>
         </div>
 
         <div className="nav-links">
@@ -53,8 +56,9 @@ const Navbar = () => {
               <Link className="menu-btn overflow-hidden">
               <img src={assets.menu_icon} onClick={()=>setIsMenuVisible(true)} className={`${isMenuVisible ? "hidden" :"flex"} flex sm:hidden cursor-pointer w-5`}/>
               <div className={`mobile-menu ${isMenuVisible ? "flex h-screen" : "hidden"} transition-transform duration-300 ease overflow-hidden gap-2 flex-col items-start absolute top-0 font-medium py-4 left-0 block z-50  w-full bg-lightPrimary text-darkPrimary `}>
-                <div className="flex justify-start items-center gap-3 px-3 lg:px-5 pb-1 " onClick={()=>setIsMenuVisible(false)}>
-                <img src={assets.dropdown_icon} className="rotate-180 h-4 text-black " />
+                <div className="flex justify-start items-center gap-1 px-3 lg:px-5 pb-1 " onClick={()=>setIsMenuVisible(false)}>
+                {/* <img src={assets.dropdown_icon} className="rotate-180 h-4 text-black " /> */}
+                <ChevronLeft />
                 <h3 className="text-lg ">Back</h3>
                 </div>
                 <p className="w-screen h-[.5px] bg-gray-400 "/>

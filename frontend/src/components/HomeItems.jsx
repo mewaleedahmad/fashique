@@ -1,10 +1,12 @@
 import { products } from "../assets/frontend_assets/assets";
+import { Link } from "react-router-dom";
+const menItems = products.filter(item => item.category === "Men").slice(0,8)
 
-const menItems = products.filter(item => item.category === "Men").slice(0,10)
 // eslint-disable-next-line react/prop-types
 export default function App({className}) {
   return (
-    <div className={`gap-6 grid grid-cols-2 sm:grid-cols-5 grid-rows-2  w-full ${className}`}>
+    <section className=" flex flex-col w-full items-center">
+    <div className={`gap-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4   w-full ${className}`}>
       {menItems.map((item) => (
         <div className="card card-compact cursor-pointer bg-lightPrimary  shadow-xl" key={item._id}>
         <figure>
@@ -19,5 +21,8 @@ export default function App({className}) {
       </div>
       ))}
     </div>
+       <Link to="/men" className="btn btn-outlinetext-center px-4 py-3 rounded-lg my-12 bg-darkPrimary text-lightPrimary font-bold   ">EXPLORE MORE</Link>
+     </section>
+  //  
   );
 }

@@ -6,8 +6,8 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <MainTitle title="MEN" className="pt-14"/>
-      <HomeItems for="Men" className="pt-20"/>
+      <MainTitle title1="MEN" title2="LATEST" className="pt-14"/>
+      <HomeItems for="Men" className="pt-12"/>
       {/* <HomeItems for="Women" className="pt-20"/> */}
     </div>
   )

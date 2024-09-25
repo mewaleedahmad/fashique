@@ -4,7 +4,6 @@ import Home from "./pages/Home"
 import Men from "./pages/Men"
 import Women from "./pages/Women"
 import Kids from "./pages/Kids"
-import Deals from "./pages/Deals"
 import About from "./pages/About"
 import Product from "./pages/Product"
 import Cart from "./pages/Cart"
@@ -15,14 +14,13 @@ import Navbar from "./components/Navbar"
 
 const App = () => {
   return (
-    <div className="layout flex flex-col min-h-screen">
+    <div className="layout flex flex-col min-h-screen overflow-x-hidden">
         <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/men" element={<Men/>}/>
         <Route path="/women" element={<Women/>}/>
         <Route path="/kids" element={<Kids/>}/>
-        <Route path="/deals" element={<Deals/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/product:productId" element={<Product/>}/>
         <Route path="/cart" element={<Cart/>}/>

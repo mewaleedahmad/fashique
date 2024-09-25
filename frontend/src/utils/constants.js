@@ -19,11 +19,6 @@ export const NavLinks = [
       link : "KIDS",
       route : "/kids"
     },
-    {
-      id : 5,
-      link : "DEALS",
-      route : '/deals'
-    },
     
   ]
 

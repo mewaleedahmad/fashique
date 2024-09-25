@@ -33,7 +33,7 @@ html,body{
 
 @layer components{
     .layout {
-        @apply px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] min-h-screen ;
+        @apply px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]  ;
       }
       
 }
