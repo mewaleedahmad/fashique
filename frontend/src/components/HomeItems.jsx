@@ -15,8 +15,8 @@ export default function App({className}) {
             alt="Shoes" />
         </figure>
         <div className="card-body">
-          <p className="text-lg font-medium">{item.name}</p>
-          <p className="text-lg font-bold">{item.price}&nbsp;PKR</p>
+          <p className="text-md font-medium">{item.name}</p>
+          <p className="text-md text-red-800 font-bold">{item.price}&nbsp;PKR</p>
         </div>
       </div>
       ))}
