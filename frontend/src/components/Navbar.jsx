@@ -4,6 +4,7 @@ import { NavLinks } from "../utils/constants"
 import { assets } from "../assets/frontend_assets/assets"
 import { useState } from "react"
 import { ChevronLeft } from "lucide-react"
+import { motion } from "framer-motion"
 
 const Navbar = () => {
   const [isMenuVisible,setIsMenuVisible]=useState(false)
@@ -20,8 +21,8 @@ const Navbar = () => {
         <div className="nav-links">
             <ul className="hidden sm:flex gap-5 justify-center items-baseline text-sm lg:text-md xl:text-lg font-medium text-darkPrimary">
               {NavLinks.map((item)=>(
-                <NavLink to={item.route} key={item.id} className="flex flex-col  justify-center  items-center">
-                <h3 className=" pb-1">{item.link}</h3>
+                <NavLink  to={item.route} key={item.id} className="flex flex-col  justify-center  items-center">
+                <motion.h3 whileHover={{scale:1.1}} className=" pb-1">{item.link}</motion.h3>
                 <hr className="w-2/4 bg-darkPrimary  h-[2px] hidden "/>
                 </NavLink>
               ))}
@@ -56,8 +57,7 @@ const Navbar = () => {
               <Link className="menu-btn overflow-hidden">
               <img src={assets.menu_icon} onClick={()=>setIsMenuVisible(true)} className={`${isMenuVisible ? "hidden" :"flex"} flex sm:hidden cursor-pointer w-5`}/>
               <div className={`mobile-menu ${isMenuVisible ? "flex h-screen" : "hidden"} transition-transform duration-300 ease overflow-hidden gap-2 flex-col items-start absolute top-0 font-medium py-4 left-0 block z-50  w-full bg-lightPrimary text-darkPrimary `}>
-                <div className="flex justify-start items-center gap-1 px-3 lg:px-5 pb-1 " onClick={()=>setIsMenuVisible(false)}>
-                {/* <img src={assets.dropdown_icon} className="rotate-180 h-4 text-black " /> */}
+                <div  className="flex justify-start items-center gap-1 px-3 lg:px-5 pb-1 " onClick={()=>setIsMenuVisible(false)}>
                 <ChevronLeft />
                 <h3 className="text-lg ">Back</h3>
                 </div>
