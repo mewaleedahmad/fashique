@@ -3,7 +3,7 @@ import Collection from "../components/Collection"
 const Kids = () => {
   return (
     <div>
-      <Collection title1="KIDS" title2="COLLECTION"/>
+      <Collection category="Kids" title1="KIDS" title2="COLLECTION"/>
     </div>
   )
 }

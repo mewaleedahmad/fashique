@@ -1,11 +1,9 @@
 import { motion } from "framer-motion";
-import { products } from "../assets/frontend_assets/assets";
-const filterProducts = products.filter(item => item.category === "Men")
-export default function Card() {
+export default function Card({product,key}) {
   return (
     <div className={`gap-x-5 gap-y-8 grid grid-cols-2 md:grid-cols-3   grid-rows-2  w-full `}>
-      {filterProducts.map((item) => (
-        <motion.div whileHover={{scale:1.1}}  className=" rounded-sm overflow-hidden card-compact cursor-pointer bg-lightPrimary shadow-md" key={item._id}>
+      {product.map((product) => (
+        <motion.div whileHover={{scale:1.1}}key={key} className=" rounded-sm overflow-hidden card-compact cursor-pointer bg-lightPrimary shadow-md" >
         <figure>
           <img
             src={item.image}

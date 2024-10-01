@@ -1,24 +1,54 @@
-import Card from "./Card";
 import MainTitle from "./MainTitle";
 import { useState } from "react";
 import { ChevronRight } from "lucide-react";
+import { products } from "../assets/frontend_assets/assets";
+import { motion } from "framer-motion";
+
 
 const productType = ["Topwear", "Bottomwear", "Footwear"];
 const productPrice = [
-  "Under 1000",
-  "1000 - 2000",
-  "2000 - 3000",
-  "3000 - 4000",
-  "4000 - 5000",
-  "Above 5000 ",
+  { label: "Under 1000", range: [0, 1000] },
+  { label: "1000 - 2000", range: [1000, 2000] },
+  { label: "2000 - 3000", range: [2000, 3000] },
+  { label: "3000 - 4000", range: [3000, 4000] },
+  { label: "4000 - 5000", range: [4000, 5000] },
+  { label: "Above 5000", range: [5000, Infinity] },
 ];
 
 // eslint-disable-next-line react/prop-types
-const Collection = ({ title1,title2 }) => {
-  const [mobileFilter,SetMobileFilter] = useState(false)
+const Collection = ({ category,title1,title2 }) => {
+  const [mobileFilter,SetMobileFilter] = useState(false);
+  const [sortOrder,setSortOrder]= useState("Relevant")
+  const [subCategory,setSubCategory] = useState([]);
+  const [priceRange,setPriceRange] = useState([0,Infinity]);
+
 const handleMobileFilter = ()=>{
   SetMobileFilter(!mobileFilter)
 }
+
+const handleSubCategory = (type) => {
+  setSubCategory((prev) =>(
+    prev.includes(type) ? prev.filter((sub) => sub !== type) : [...prev, type])
+  );
+};
+
+const handlePriceRange=(priceRange)=>{
+setPriceRange(priceRange)
+}
+
+const filteredProducts = products.filter((product) => (
+  product.category === category &&
+  (subCategory.length === 0 || subCategory.includes(product.subCategory)) &&
+  product.price >= priceRange[0] && product.price <= priceRange[1]
+));
+
+const sortedProducts = filteredProducts.sort((a,b)=>{
+  if(sortOrder === "Sort By : Low to High") return a.price - b.price;
+  if(sortOrder === "Sort By : High to Low") return b.price - a.price;
+  return 0;
+})
+
+
   return (
     <section className="block 300 lg:flex gap-10 w-full mt-10  ">
       <div className={`filter lg:w-96 mb-5 lg:mb-0 w-full  lg:flex lg:flex-col gap-2 lg:pt-8`}>
@@ -35,6 +65,8 @@ const handleMobileFilter = ()=>{
                 type="checkbox"
                 name="type"
                 className="checkbox checkbox-xs"
+                onChange={()=>handleSubCategory(type)}
+                checked={subCategory.includes(type)}
               />
               <p>{type}</p>
             </div>
@@ -48,11 +80,12 @@ const handleMobileFilter = ()=>{
               key={i}
             >
               <input
-                type="checkbox"
+                type="radio"
                 name="price"
-                className="checkbox checkbox-xs"
+                className="checkbox radio-xs"
+                onChange={()=>handlePriceRange(price.range)}
               />
-              <p>{price}&nbsp;PKR</p>
+              <p>{price.label}&nbsp;PKR</p>
             </div>
           ))}
         </div>
@@ -64,15 +97,30 @@ const handleMobileFilter = ()=>{
           <div className="flex lg:justify-between gap-4 lg:gap-0 flex-col lg:flex-row items-center  pb-4">
             <MainTitle title1={title1} title2={title2} className="self-start" />
             <div className="self-end">
-              <select className="px-2 py-4  bg-lightPrimary outline-none shadow-sm rounded-md lg:text-md text-sm font-bold border-darkSecondary border">
-              <option  className="font-normal " selected>Sort By : Relevant </option>
-              <option  className="font-normal ">Sort By : High to Low </option>
-              <option  className="font-normal ">Sort By : Low to High</option>
+              <select value={sortOrder} onChange={(e)=>setSortOrder(e.target.value)} className="px-2 py-4  bg-lightPrimary outline-none shadow-sm rounded-md lg:text-md text-sm font-bold border-darkSecondary border">
+              <option  className="font-regular " selected>Sort By : Relevant </option>
+              <option  className="font-regular ">Sort By : Low to High</option>
+              <option  className="font-regular ">Sort By : High to Low </option>
             </select>
             </div>
           </div>
-          <div className="">
-            <Card />
+          <div className="Cards">
+            <div className={`gap-x-5 gap-y-8 grid grid-cols-2 md:grid-cols-3 pb-10  grid-rows-2  w-full `}>
+          {filteredProducts.length > 0 ? (
+          filteredProducts.map((product) =>(
+                <motion.div whileHover={{scale:1.1}}key={product._id} className=" rounded-sm overflow-hidden card-compact cursor-pointer bg-lightPrimary shadow-md" >
+                <figure>
+                  <img
+                    src={product.image}
+                    alt="Shoes" />
+                </figure>
+                <div className="card-body">
+                  <p className="text-md font-medium">{product.name}</p>
+                  <p className="text-md text-red-900 font-bold">PKR&nbsp;{product.price}</p>
+                </div>
+              </motion.div>))) : <p className="text-xl font-bold absolute top-60 left-70 text-red-800">Currently No Products Available</p>
+            }
+            </div>
           </div>
         </div>
       </div>
