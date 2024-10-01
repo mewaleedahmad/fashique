@@ -48,7 +48,6 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
   return 0;
 })
 
-
   return (
     <section className="block 300 lg:flex gap-10 w-full mt-10  ">
       <div className={`filter lg:w-96 mb-5 lg:mb-0 w-full  lg:flex lg:flex-col gap-2 lg:pt-8`}>
@@ -72,7 +71,8 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
             </div>
           ))}
         </div>
-        <div className="product-color border rounded-sm flex flex-col gap-4 overflow-hidden  border-darkSecondary mt-5 px-5 py-4">
+
+        <div className="Price-Filter border rounded-sm flex flex-col gap-4 overflow-hidden  border-darkSecondary mt-5 px-5 py-4">
           <p className="font-semibold  block">PRICE</p>
           {productPrice.map((price, i) => (
             <div
@@ -104,6 +104,7 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
             </select>
             </div>
           </div>
+
           <div className="Cards">
             <div className={`gap-x-5 gap-y-8 grid grid-cols-2 md:grid-cols-3 pb-10  grid-rows-2  w-full `}>
           {filteredProducts.length > 0 ? (
