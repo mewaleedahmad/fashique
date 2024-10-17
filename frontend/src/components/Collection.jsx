@@ -3,7 +3,8 @@ import { useState } from "react";
 import { ChevronRight } from "lucide-react";
 import { products } from "../assets/frontend_assets/assets";
 import { motion } from "framer-motion";
-
+import { Link } from "react-router-dom";
+import Product from "../pages/Product";
 
 const productType = ["Topwear", "Bottomwear", "Footwear"];
 const productPrice = [
@@ -32,8 +33,8 @@ const handleSubCategory = (type) => {
   );
 };
 
-const handlePriceRange=(priceRange)=>{
-setPriceRange(priceRange)
+const handlePriceRange=(price)=>{
+  setPriceRange(price)
 }
 
 const filteredProducts = products.filter((product) => (
@@ -49,11 +50,11 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
 })
 
   return (
-    <section className="block 300 lg:flex gap-10 w-full mt-10  ">
-      <div className={`filter lg:w-96 mb-5 lg:mb-0 w-full  lg:flex lg:flex-col gap-2 lg:pt-8`}>
-        <div className="flex gap-2 items-center" onClick={()=>handleMobileFilter(true)}>
+    <section className="block 300  mt-10 lg:flex gap-10 w-full   ">
+      <div className={`filter lg:w-80 mb-5 lg:mb-0 w-full  lg:flex lg:flex-col gap-2 lg:pt-8`}>
+        <div className="flex gap-2 items-center " onClick={()=>handleMobileFilter(true)}>
       <h4 className="text-xl font-bold cursor-pointer  lg:cursor-none">FILTERS</h4>
-      <ChevronRight className="lg:hidden flex"/>
+      <ChevronRight className="lg:hidden flex cursor-pointer"/>
         </div>
         <div className={`${mobileFilter ? "flex flex-col": "hidden"} lg:flex lg:flex-col`}>
         <div className="product-type border rounded-sm border-darkSecondary mt-5 px-5 py-4">
@@ -81,6 +82,7 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
             >
               <input
                 type="radio"
+                
                 name="price"
                 className="checkbox radio-xs"
                 onChange={()=>handlePriceRange(price.range)}
@@ -110,6 +112,7 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
           {filteredProducts.length > 0 ? (
           filteredProducts.map((product) =>(
                 <motion.div whileHover={{scale:1.1}}key={product._id} className=" rounded-sm overflow-hidden card-compact cursor-pointer bg-lightPrimary shadow-md" >
+                  <Link to={`/product`} >
                 <figure>
                   <img
                     src={product.image}
@@ -118,7 +121,10 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
                 <div className="card-body">
                   <p className="text-md font-medium">{product.name}</p>
                   <p className="text-md text-red-900 font-bold">PKR&nbsp;{product.price}</p>
-                </div>
+                </div >
+                  
+                </Link>
+
               </motion.div>))) : <p className="text-xl font-bold absolute top-60 left-70 text-red-800">Currently No Products Available</p>
             }
             </div>

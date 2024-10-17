@@ -12,7 +12,9 @@ import Orders from "./pages/Orders"
 import PlaceOrder from "./pages/PlaceOrder"
 import Navbar from "./components/Navbar"
 
+
 const App = () => {
+  const id = "aaab"
   return (
     <div className="layout flex flex-col min-h-screen overflow-x-hidden">
         <Navbar/>
@@ -22,7 +24,7 @@ const App = () => {
         <Route path="/women" element={<Women/>}/>
         <Route path="/kids" element={<Kids/>}/>
         <Route path="/about" element={<About/>}/>
-        <Route path="/product:productId" element={<Product/>}/>
+        <Route path={`/product`} element={<Product/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/orders" element={<Orders/>}/>
