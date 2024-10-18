@@ -1,4 +1,3 @@
-
 // eslint-disable-next-line react/prop-types
 const MainTitle = ({title1,title2,className}) => {
   return (

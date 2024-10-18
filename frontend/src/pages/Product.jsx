@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { products } from "../assets/frontend_assets/assets";
 import { useParams } from "react-router-dom";
 
-const sizes = ["S", "M", "L", "XL", "XXL"];
 // eslint-disable-next-line react/prop-types
 const Product = () => {
   const { id } = useParams();

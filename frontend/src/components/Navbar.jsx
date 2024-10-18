@@ -8,6 +8,7 @@ import { motion } from "framer-motion"
 
 const Navbar = () => {
   const [isMenuVisible,setIsMenuVisible]=useState(false)
+  const [cartCount,setCartCount] = useState("2")
 
   return (
     <div className="flex  justify-between items-center py-5 ">
@@ -50,7 +51,7 @@ const Navbar = () => {
               <Link to={"/cart"} className="cart relative">
               <img src={assets.cart_icon} className="w-5 relative cursor-pointer" alt="cart"/>
               <div className="absolute bottom-[-5px] right-[-3px] flex justify-center items-center bg-black text-white aspect-square w-4 rounded-full 1 text-[8px]">
-                0
+                {cartCount}
                 </div>
               </Link>
 

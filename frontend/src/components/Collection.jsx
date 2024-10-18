@@ -98,7 +98,7 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
         <div className="flex flex-col gap-6">
           <div className="flex lg:justify-between gap-4 lg:gap-0 flex-col lg:flex-row items-center  pb-4">
             <MainTitle title1={title1} title2={title2} className="self-start" />
-            <div className="self-end">
+            <div className="self-end mt-4">
               <select value={sortOrder} onChange={(e)=>setSortOrder(e.target.value)} className="px-2 py-4  bg-lightPrimary outline-none shadow-sm rounded-md lg:text-md text-sm font-bold border-darkSecondary border">
               <option  className="font-regular " selected>Sort By : Relevant </option>
               <option  className="font-regular ">Sort By : Low to High</option>
