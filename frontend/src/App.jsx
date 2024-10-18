@@ -14,7 +14,6 @@ import Navbar from "./components/Navbar"
 
 
 const App = () => {
-  const id = "aaab"
   return (
     <div className="layout flex flex-col min-h-screen overflow-x-hidden">
         <Navbar/>

@@ -120,7 +120,7 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
                 </figure>
                 <div className="card-body">
                   <p className="text-md font-medium">{product.name}</p>
-                  <p className="text-md text-red-900 font-bold">PKR&nbsp;{product.price}</p>
+                  <p className="text-md text-red-800 font-bold">PKR&nbsp;{product.price}</p>
                 </div >
                   
                 </Link>
