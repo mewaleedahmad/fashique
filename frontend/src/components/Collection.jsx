@@ -1,10 +1,9 @@
 import MainTitle from "./MainTitle";
-import { useState } from "react";
+import { useState} from "react";
 import { ChevronRight } from "lucide-react";
 import { products } from "../assets/frontend_assets/assets";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import Product from "../pages/Product";
 
 const productType = ["Topwear", "Bottomwear", "Footwear"];
 const productPrice = [
@@ -18,6 +17,7 @@ const productPrice = [
 
 // eslint-disable-next-line react/prop-types
 const Collection = ({ category,title1,title2 }) => {
+  
   const [mobileFilter,SetMobileFilter] = useState(false);
   const [sortOrder,setSortOrder]= useState("Relevant")
   const [subCategory,setSubCategory] = useState([]);
@@ -56,7 +56,7 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
       <h4 className="text-xl font-bold cursor-pointer  lg:cursor-none">FILTERS</h4>
       <ChevronRight className="lg:hidden flex cursor-pointer"/>
         </div>
-        <div className={`${mobileFilter ? "flex flex-col": "hidden"} lg:flex lg:flex-col`}>
+        <div className={`${mobileFilter ? "flex flex-col": "hidden"}  lg:flex lg:flex-col`}>
         <div className="product-type border rounded-sm border-darkSecondary mt-5 px-5 py-4">
           <p className="font-semibold pb-4">TYPE</p>
           {productType.map((type, i) => (
@@ -111,8 +111,8 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
             <div className={`gap-x-5 gap-y-8 grid grid-cols-2 md:grid-cols-3 pb-10  grid-rows-2  w-full `}>
           {filteredProducts.length > 0 ? (
           filteredProducts.map((product) =>(
-                <motion.div whileHover={{scale:1.1}}key={product._id} className=" rounded-sm overflow-hidden card-compact cursor-pointer bg-lightPrimary shadow-md" >
-                  <Link to={`/product`} >
+            <motion.div whileHover={{scale:1.1}}key={product._id} className=" rounded-md overflow-hidden card-compact cursor-pointer bg-lightPrimary shadow-md" >
+                  <Link to={`/product/${product._id}`} >
                 <figure>
                   <img
                     src={product.image}
@@ -122,16 +122,14 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
                   <p className="text-md font-medium">{product.name}</p>
                   <p className="text-md text-red-800 font-bold">PKR&nbsp;{product.price}</p>
                 </div >
-                  
                 </Link>
-
               </motion.div>))) : <p className="text-xl font-bold absolute top-60 left-70 text-red-800">Currently No Products Available</p>
             }
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+          </div>
+          </div>
+          </section>
   );
 };
 
