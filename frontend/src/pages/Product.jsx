@@ -15,13 +15,13 @@ const Product = () => {
 
   return (
     <div className="w-full  lg:flex gap-6 mt-10">
-      <div  className="image-section lg:w-1/2 w-full rounded-md overflow-hidden ">
+      <div  className="image-section lg:w-[40%] w-full rounded-md overflow-hidden ">
       <img src={product.image} alt={product.name} className=" object-contain w-full " />
       </div>
-      <div className="details-section lg:w-1/2 w-full flex flex-col gap-4 py-10 px-3 lg:px-6 ">
-        <p className="text-3xl font-medium">{product.name}</p>
-        <p className="text-red-800 text-2xl ps-1 font-bold">{product.price} PKR</p>
-        <p className="mt-5 text-justify">{product.description}</p>
+      <div className="details-section lg:w-[60%] w-full flex flex-col gap-4 py-10 px-3 lg:px-6 ">
+        <p className="text-2xl md:text-3xl font-medium">{product.name}</p>
+        <p className="text-red-800 text-xl md:text-2xl ps-1 font-bold">{product.price} PKR</p>
+        <p className="mt-5 text-sm md:text-[1rem] text-justify">{product.description}</p>
         <p className="font-bold text-sm mt-4">SELECT SIZE</p>
         <div className="flex gap-2">
           {product.sizes.map((size, i) => (
@@ -52,7 +52,7 @@ const Product = () => {
             <p className="pt-2 px-6 text-red-800 text-sm font-semibold">Select Any Size</p>
           }
         </div>
-        <div className="border-t text-sm capitalize border-darkSecondary mt-8 pt-8 flex flex-col gap-1">
+        <div className="border-t text-sm  capitalize border-darkSecondary mt-8 pt-8 flex flex-col gap-1">
           <p>100% Original Product.</p>
           <p>Cash on delivery is Available on this product.</p>
           <p>Easy return and exchange policy within 7 days.</p> 

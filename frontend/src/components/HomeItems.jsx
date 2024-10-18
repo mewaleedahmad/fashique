@@ -8,7 +8,8 @@ export default function App({className}) {
     <section className=" flex flex-col w-full items-center">
     <div className={`gap-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4   w-full ${className}`}>
       {menItems.map((item) => (
-        <div className="card card-compact cursor-pointer bg-lightPrimary  shadow-xl" key={item._id}>
+        <motion.div  whileHover={{scale:1.1}} className="rounded-md overflow-hidden card-compact cursor-pointer bg-lightPrimary shadow-md" key={item._id}>
+          <Link to={`/product/${item._id}`} >
         <figure>
           <img
             src={item.image}
@@ -18,7 +19,8 @@ export default function App({className}) {
           <p className="text-md font-medium">{item.name}</p>
           <p className="text-md text-red-800 font-bold">{item.price}&nbsp;PKR</p>
         </div>
-      </div>
+        </Link>
+      </motion.div>
       ))}
     </div>
        <motion.div whileHover={{scale:1.1}}>
