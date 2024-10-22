@@ -29,6 +29,7 @@ export default {
         },
       },
     ],
+    logs:false
   },
   
 };

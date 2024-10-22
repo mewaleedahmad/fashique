@@ -2,7 +2,6 @@ import Hero from "../components/Hero"
 import HomeItems from "../components/HomeItems"
 import MainTitle from "../components/MainTitle"
 import {Headset,CircleCheckBig,Repeat} from "lucide-react"
-// import Marquee from "../components/Marquee"
 // 
 const Home = () => {
   return (

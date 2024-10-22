@@ -7,10 +7,18 @@ const Cart = () => {
   const cartProducts = ["aaaad"]
   const product = products.find((product) => product._id === cartProducts[0])
 
+  const Cart = JSON.parse(localStorage.getItem("cart"))
+  const localCartItems = Cart.filter((item)=>item.id )  
+  const filteredProducts = products.filter((prod)=>prod._id )
+
+  const cartItems = filteredProducts.filter((cartItem) => 
+    localCartItems.some((localItem) => localItem.id === cartItem._id)
+  );
+ console.log(cartItems.filter((item)=> item.price))
+
   const shippingCharges = 300
   const [total,SetTotal] = useState(null)
   const [Subtotal,setSubTotal] = useState(null)
-  
   
   useEffect(()=>{
     setSubTotal(product.price)
@@ -35,15 +43,17 @@ const Cart = () => {
       <div className="lg:flex  items-start ">
 
       <div className="Cart-Items space-y-4 w-full lg:w-[70%]">
-        <div className="flex items-center   gap-2">
+        {cartItems.map((item)=>(
+        <div key={item._id} className="flex items-center  gap-2">
           <div className="div-1  overflow-hidden">
-            <img src={product.image} alt="Product" className="w-28 h-24  object-contain" />
+            <img src={item.image} alt="Product" className="w-28 h-24  object-contain" />
           </div>
-          <div className="div-2 flex flex-col gap-1 lg:gap-2">
-            <p className="text-lg leading-none lg:leading-7 ">{product.name}</p>
+          
+          <div className="div-2 flex flex-grow flex-col gap-1 lg:gap-2">
+            <p className="text-lg leading-none lg:leading-7 ">{item.name}</p>
             <div className="flex items-center gap-2 lg:gap-4 ">
               <p className="text-sm bg-lightSecondary border border-darkSecondary rounded-sm px-3 py-1 text-center">S</p>
-              <p className="text-sm font-bold text-red-800">{product.price}&nbsp;PKR</p>
+              <p className="text-sm font-bold text-red-800">{item.price}&nbsp;PKR</p>
             </div>
           </div>
           <div className="div-3">
@@ -57,6 +67,8 @@ const Cart = () => {
             </div>
           </div>
         </div>
+        ))}
+        
       </div>
 
 

@@ -13,6 +13,15 @@ const Product = () => {
 
   const product = products.find((product) => product._id === id);
 
+  const addToCart = () => {
+    const item = { id, selectedSize };
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(item);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    notify();
+    location.reload()
+  }
+
   return (
     <div className="w-full  lg:flex gap-6 mt-10">
       <div  className="image-section lg:w-[40%] w-full rounded-md overflow-hidden ">
@@ -44,7 +53,7 @@ const Product = () => {
             theme="dark"
           />
           <button 
-            onClick={() => (selectedSize === "" ? setSizeNotSelectedError(true) : notify())} 
+            onClick={() => (selectedSize === "" ? setSizeNotSelectedError(true) : addToCart())} 
             className="btn  btn-outline w-40 bg-darkPrimary text-lightPrimary font-normal rounded-md mt-5">
             ADD TO CART
           </button>

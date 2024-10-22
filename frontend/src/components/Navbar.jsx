@@ -2,13 +2,20 @@ import { Link, NavLink } from "react-router-dom"
 import "../app.css"
 import { NavLinks } from "../utils/constants"
 import { assets } from "../assets/frontend_assets/assets"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { ChevronLeft } from "lucide-react"
 import { motion } from "framer-motion"
 
 const Navbar = () => {
   const [isMenuVisible,setIsMenuVisible]=useState(false)
-  const [cartCount,setCartCount] = useState("2")
+  const [cartCount,setCartCount] = useState(0)
+
+  const cart = JSON.parse(localStorage.getItem("cart"))
+
+  useEffect(()=>{
+    setCartCount(cart === null ? 0 : cart.length)
+
+  },[cart])
 
   return (
     <div className="flex  justify-between items-center py-5 ">
@@ -50,7 +57,7 @@ const Navbar = () => {
 
               <Link to={"/cart"} className="cart relative">
               <img src={assets.cart_icon} className="w-5 relative cursor-pointer" alt="cart"/>
-              <div className="absolute bottom-[-5px] right-[-3px] flex justify-center items-center bg-black text-white aspect-square w-4 rounded-full 1 text-[8px]">
+              <div className="absolute bottom-[-7px] right-[-3px] flex justify-center items-end bg-black text-white  aspect-square w-4 h-4 rounded-full text-[10px]">
                 {cartCount}
                 </div>
               </Link>
