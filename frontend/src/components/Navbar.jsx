@@ -10,12 +10,12 @@ const Navbar = () => {
   const [isMenuVisible,setIsMenuVisible]=useState(false)
   const [cartCount,setCartCount] = useState(0)
 
-  const cart = JSON.parse(localStorage.getItem("cart"))
-
+  
   useEffect(()=>{
+    const cart = JSON.parse(localStorage.getItem("cart"))
     setCartCount(cart === null ? 0 : cart.length)
 
-  },[cart])
+  },[cartCount])
 
   return (
     <div className="flex  justify-between items-center py-5 ">
@@ -26,7 +26,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="nav-links">
+        <div className="nav-links lg:pe-14">
             <ul className="hidden sm:flex gap-5 justify-center items-baseline text-sm lg:text-md xl:text-lg font-medium text-darkPrimary">
               {NavLinks.map((item)=>(
                 <NavLink  to={item.route} key={item.id} className="flex flex-col  justify-center  items-center">
@@ -38,9 +38,9 @@ const Navbar = () => {
         </div>
 
         <div className="nav-buttons"> 
-          <div className="flex justify-center items-center gap-5 py-4">
+          <div className="flex justify-center items-center gap-5 py-4 ">
 
-            <Link className="search">
+            {/* <Link className="search">
             <img src={assets.search_icon} className="w-5" alt="search"/>
             </Link>
 
@@ -53,9 +53,9 @@ const Navbar = () => {
                   <Link className="cursor-pointer text-darkSecondary hover:text-darkPrimary">Logout</Link>
                 </div>
               </div>
-            </div>
+            </div> */}
 
-              <Link to={"/cart"} className="cart relative">
+              <Link to={"/cart"} className="cart relative ">
               <img src={assets.cart_icon} className="w-5 relative cursor-pointer" alt="cart"/>
               <div className="absolute bottom-[-7px] right-[-3px] flex justify-center items-end bg-black text-white  aspect-square w-4 h-4 rounded-full text-[10px]">
                 {cartCount}

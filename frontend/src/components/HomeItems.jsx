@@ -1,13 +1,13 @@
 import { products } from "../assets/frontend_assets/assets";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-const menItems = products.filter(item => item.category === "Men").slice(0,8)
+const Items = products.filter(item => item.bestseller).slice(0,8)
 // eslint-disable-next-line react/prop-types
 export default function App({className}) {
   return (
     <section className=" flex flex-col w-full items-center">
     <div className={`gap-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4   w-full ${className}`}>
-      {menItems.map((item) => (
+      {Items.map((item) => (
         <motion.div  whileHover={{scale:1.1}} className="rounded-md overflow-hidden card-compact cursor-pointer bg-lightPrimary shadow-md" key={item._id}>
           <Link to={`/product/${item._id}`} >
         <figure>
@@ -23,9 +23,6 @@ export default function App({className}) {
       </motion.div>
       ))}
     </div>
-       <motion.div whileHover={{scale:1.1}}>
-       <Link  to="/men" className="btn btn-outline text-center px-4 py-3 rounded-lg my-12 bg-darkPrimary text-lightPrimary font-bold">EXPLORE MORE</Link>
-    </motion.div>
      </section>
   //  
   );

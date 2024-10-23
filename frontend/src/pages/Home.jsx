@@ -7,8 +7,8 @@ const Home = () => {
   return (
     <section className="overflow-hidden">
       <Hero />
-      <MainTitle title1="MEN" title2="LATEST" className="pt-14"/>
-      <HomeItems for="Men" className="pt-12"/>
+      <MainTitle title1="BEST" title2="SELLERS" className="pt-14"/>
+      <HomeItems for="Men" className="py-12"/>
 
       <div className="About md:flex space-y-12 md:space-y-0 gap-6 justify-evenly  text-center w-full mb-20 mt-14">
         <div className="flex flex-col items-center justify-center gap-1">
