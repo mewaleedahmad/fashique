@@ -25,6 +25,7 @@ const Cart = () => {
     const updatedCart = cart.filter((item) => item.id !== id);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     setCart(updatedCart);
+    location.reload()
   };
 
   useEffect(() => {

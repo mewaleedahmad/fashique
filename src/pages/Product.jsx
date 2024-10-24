@@ -26,6 +26,9 @@ const Product = () => {
       notifyAdded();
     }
     localStorage.setItem("cart", JSON.stringify(cart));
+    setTimeout(()=>{
+      location.reload()
+    },1000)
   }
 
 

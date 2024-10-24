@@ -1,14 +1,20 @@
 import Hero from "../components/Hero"
 import HomeItems from "../components/HomeItems"
-import MainTitle from "../components/MainTitle"
 import {Headset,CircleCheckBig,Repeat} from "lucide-react"
+import Marquee from "../components/Marquee"
 // 
 const Home = () => {
   return (
     <section className="overflow-hidden">
       <Hero />
-      <MainTitle title1="BEST" title2="SELLERS" className="pt-14"/>
+      <div className="flex flex-col text-4xl gap-2 items-center mt-10 py-8 justify-center">
+        <h1>Trending Now</h1>
+      <svg className="text-darkPrimary w-64" viewBox="-347 -30.1947 694 96.19" stroke="currentColor" fill="none" role="presentation" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path strokeLinecap="round" strokeWidth="20" pathLength="1" d="M-335,54 C-335,54 -171,-58 -194,-3 C-217,52 -224.1199951171875,73.552001953125 -127,11 C-68,-27 -137,50 -33,42 C31.43899917602539,37.042999267578125 147.14700317382812,-29.308000564575195 335,2"></path>
+    </svg>
+      </div>
       <HomeItems for="Men" className="py-12"/>
+      {/* <Marquee/> */}
 
       <div className="About md:flex space-y-12 md:space-y-0 gap-6 justify-evenly  text-center w-full mb-20 mt-14">
         <div className="flex flex-col items-center justify-center gap-1">
