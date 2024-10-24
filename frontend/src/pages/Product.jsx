@@ -9,28 +9,19 @@ const Product = () => {
   const { id } = useParams();
   const [selectedSize, setSelectedSize] = useState("");
   const [sizeNotSelectedError, setSizeNotSelectedError] = useState(false);
-  const [itemQuantity, setItemQuantity] = useState(1);
 
   const notify = () => toast("Added To Cart");
 
   const product = products.find((product) => product._id === id);
 
   const addToCart = () => {
-    const item = { id, selectedSize ,itemQuantity};
+    const item = { id, selectedSize};
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.push(item);
     localStorage.setItem("cart", JSON.stringify(cart));
     notify();
-    location.reload()
   }
 
-  const handleIncrement = () => {
-    setItemQuantity((prev) => (prev < 10 ? prev + 1 : prev));
-  };
-  
-  const handleDecrement = () => {
-    setItemQuantity((prev) => (prev > 1 ? prev - 1 : prev));
-  };
 
   return (
     <div className="w-full  lg:flex gap-6 mt-10">
@@ -52,19 +43,7 @@ const Product = () => {
             </button>
           ))}
         </div>
-        <div className="flex items-center gap-5">
-                      <button
-                        onClick={() => handleDecrement()}
-                        className="text-sm bg-darkPrimary flex items-center justify-center text-lightPrimary rounded-full w-5">
-                        -
-                      </button>
-                      <p className="w-2">{itemQuantity}</p>
-                      <button
-                        onClick={() => handleIncrement()}
-                        className="text-sm bg-darkPrimary flex items-center justify-center text-lightPrimary rounded-full w-5">
-                        +
-                      </button>
-                    </div>
+    
         <div>
           <ToastContainer
             position="top-right"

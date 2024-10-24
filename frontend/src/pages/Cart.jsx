@@ -12,7 +12,6 @@ const Cart = () => {
 
   const localCartItemsId = cart ? cart.filter((item) => item.id) : [];
   const localCartItemsSize = cart ? cart.filter((item) => item.selectedSize) : [];
-  const localCartItemsQTY = cart ? cart.filter((item) => item.itemQuantity) : [];
 
   const filteredProducts = products.filter((prod) => prod._id);
   const cartItems = filteredProducts.filter((cartItem) =>
@@ -44,9 +43,9 @@ const Cart = () => {
   }, []);
 
   useEffect(() => {
-    setSubTotal(subTotalPrice);
+    setSubTotal(subTotalPrice * itemQuantity);
     SetTotal(Subtotal + shippingCharges);
-  }, [total, Subtotal, subTotalPrice]);
+  }, [total, Subtotal, subTotalPrice,itemQuantity]);
 
   return (
     <section className="w-full">
@@ -55,15 +54,12 @@ const Cart = () => {
       </div>
 
       <div className="lg:flex items-start">
-        <div className="Cart-Items space-y-4 w-full lg:w-[70%] pb-20">
+        <div className="Cart-Items space-y-4 w-full lg:w-[70%]  pb-20">
           {cartItems.map((item) => {
             const cartItemSize = localCartItemsSize.find(
               (localItem) => localItem.id === item._id
             ).selectedSize;
-            const cartItemQTY = localCartItemsQTY.find(
-              (localItem) => localItem.id === item._id
-            ).itemQuantity;
-
+         
             return (
               <div key={item._id} className="flex items-center gap-2">
                 <div className="div-1 overflow-hidden">
@@ -73,11 +69,10 @@ const Cart = () => {
                     className="w-28 h-24 object-contain"
                   />
                 </div>
-
-                <div className="div-2 flex flex-grow flex-col gap-1 lg:gap-2">
+                <div className="div-2 flex flex-grow flex-col gap-2 ">
                   <p className="text-lg leading-none lg:leading-7">{item.name}</p>
                   <div className="flex items-center gap-2 lg:gap-4">
-                    <p className="text-sm bg-lightSecondary border border-darkSecondary rounded-sm px-3 py-1 text-center">
+                    <p className="text-sm bg-lightSecondary border  border-darkSecondary rounded-sm px-2 lg:px-3 lg:py-1 py-[3px] text-center">
                       {cartItemSize || "N/A"}
                     </p>
                     <p className="text-sm font-bold text-red-800">
@@ -87,23 +82,20 @@ const Cart = () => {
                 </div>
 
                 <div className="div-3">
-                  <div className="flex lg:flex-row justify-end items-center flex-col-reverse lg:gap-20 lg:ps-20 gap-10">
-                    {/* <div className="flex items-center gap-5">
+                  <div className="flex lg:flex-row  items-center flex-col-reverse lg:gap-20 lg:ps-20 gap-1">
+                     <div className="flex items-center gap-4 lg:gap-7">
                       <button
                         onClick={() => handleDecrement(item._id)}
-                        className="text-sm bg-darkPrimary flex items-center justify-center text-lightPrimary rounded-full w-5"
-                      >
+                        className="text-sm bg-darkPrimary flex items-center justify-center text-lightPrimary rounded-full w-5">
                         -
                       </button>
                       <p className="w-2">{itemQuantity}</p>
                       <button
                         onClick={() => handleIncrement(item._id)}
-                        className="text-sm bg-darkPrimary flex items-center justify-center text-lightPrimary rounded-full w-5"
-                      >
+                        className="text-sm bg-darkPrimary flex items-center justify-center text-lightPrimary rounded-full w-5">
                         +
                       </button>
-                    </div> */}
-                    <p>{cartItemQTY}</p>
+                    </div> 
                     <button
                       className="btn btn-ghost btn-circle hover:bg-lightSecondary"
                       onClick={() => handleDeleteCartItem(item._id)}
