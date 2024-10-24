@@ -1,7 +1,7 @@
 import {  useState} from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { products } from "../assets/frontend_assets/assets";
+import { products } from "../assets/images/assets";
 import { useParams } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types

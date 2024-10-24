@@ -1,17 +1,39 @@
 import { Link, NavLink } from "react-router-dom" 
 import "../app.css"
-import { NavLinks } from "../utils/constants"
-import { assets } from "../assets/frontend_assets/assets"
+import { assets } from "../assets/images/assets"
 import { useEffect, useState } from "react"
 import { ChevronLeft } from "lucide-react"
 import { motion } from "framer-motion"
+
+const NavLinks = [
+  {
+    id:1,
+    link : "HOME",
+    route : "/"
+  },
+  {
+    id:2,
+    link : "MEN",
+    route : "/men"
+  },
+  {
+    id:3,
+    link : "WOMEN",
+    route : "/women"
+  },
+  {
+    id:4,
+    link : "KIDS",
+    route : "/kids"
+  },
+  
+]
+
 
 const Navbar = () => {
   const [isMenuVisible,setIsMenuVisible]=useState(false)
   const [cartCount,setCartCount] = useState(0)
 
-  
-  
   useEffect(()=>{
     const cart = JSON.parse(localStorage.getItem("cart"))
     setCartCount(cart === null ? 0 : cart.length)

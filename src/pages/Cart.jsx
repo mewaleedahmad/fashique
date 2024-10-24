@@ -1,5 +1,5 @@
 import MainTitle from "../components/MainTitle";
-import { products } from "../assets/frontend_assets/assets";
+import { products } from "../assets/images/assets";
 import { Trash2 } from "lucide-react";
 import { useEffect, useState } from "react";
 

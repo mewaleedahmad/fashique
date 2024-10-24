@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { assets } from "../assets/frontend_assets/assets"
+import { assets } from "../assets/images/assets"
 
 const carouselItems = [
   {

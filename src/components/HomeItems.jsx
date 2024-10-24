@@ -1,4 +1,4 @@
-import { products } from "../assets/frontend_assets/assets";
+import { products } from "../assets/images/assets";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 const Items = products.filter(item => item.bestseller).slice(0,8)

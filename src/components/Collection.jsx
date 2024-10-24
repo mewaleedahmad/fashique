@@ -1,7 +1,7 @@
 import MainTitle from "./MainTitle";
 import { useState} from "react";
 import { ChevronRight } from "lucide-react";
-import { products } from "../assets/frontend_assets/assets";
+import { products } from "../assets/images/assets";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
