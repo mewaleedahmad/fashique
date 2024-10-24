@@ -11,12 +11,12 @@ const Navbar = () => {
   const [cartCount,setCartCount] = useState(0)
 
   
+  
   useEffect(()=>{
     const cart = JSON.parse(localStorage.getItem("cart"))
     setCartCount(cart === null ? 0 : cart.length)
-
   },[cartCount])
-
+  
   return (
     <div className="flex  justify-between items-center py-5 ">
 

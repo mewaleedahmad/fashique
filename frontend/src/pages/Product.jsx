@@ -10,16 +10,22 @@ const Product = () => {
   const [selectedSize, setSelectedSize] = useState("");
   const [sizeNotSelectedError, setSizeNotSelectedError] = useState(false);
 
-  const notify = () => toast("Added To Cart");
+  const notifyAdded = () => toast("Added To Cart");
+  const notifyError = () => toast("Already In Cart");
 
   const product = products.find((product) => product._id === id);
 
   const addToCart = () => {
     const item = { id, selectedSize};
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push(item);
+    const idAlreadyExits = cart.find(i => i.id === id);
+    if(idAlreadyExits){
+      notifyError();
+    }else{
+      cart.push(item);
+      notifyAdded();
+    }
     localStorage.setItem("cart", JSON.stringify(cart));
-    notify();
   }
 
 
