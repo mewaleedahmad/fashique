@@ -52,7 +52,7 @@ const Cart = () => {
             ).selectedSize;
          
             return (
-              <div key={item._id} className="flex items-center gap-2">
+              <div key={item._id} className="flex items-center  gap-2">
                 <div className="div-1 overflow-hidden">
                   <img
                     src={item.image}
@@ -60,7 +60,7 @@ const Cart = () => {
                     className="w-28 h-24 object-contain"
                   />
                 </div>
-                <div className="div-2 flex flex-grow flex-col gap-2 ">
+                <div className="div-2 flex  flex-col gap-2 ">
                   <p className="text-lg leading-none lg:leading-7">{item.name}</p>
                   <div className="flex items-center gap-2 lg:gap-4">
                     <p className="text-sm bg-lightSecondary border  border-darkSecondary rounded-sm px-2 lg:px-3 lg:py-1 py-[3px] text-center">
@@ -69,13 +69,13 @@ const Cart = () => {
                   </div>
                 </div>
 
-                <div className="div-3">
-                  <div className="flex lg:flex-row  items-center flex-col-reverse lg:gap-20 lg:ps-20 gap-4">
-                    <p className="text-md font-bold ">
+                <div className="div-3 ">
+                  <div className="flex lg:flex-row  items-center justify-between flex-col-reverse lg:gap-20 lg:ps-20 gap-4">
+                    <p className="text-md font-bold lg:ps-20 ">
                       {item.price}&nbsp;PKR
                     </p>
                     <button
-                      className="btn btn-ghost btn-circle hover:bg-lightSecondary"
+                      className="btn btn-ghost btn-circle lg:ms-4 hover:bg-lightSecondary"
                       onClick={() => handleDeleteCartItem(item._id)}
                     >
                       <Trash2 />

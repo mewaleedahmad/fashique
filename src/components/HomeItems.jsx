@@ -13,7 +13,8 @@ export default function App({className}) {
         <figure>
           <img
             src={item.image}
-            alt="Shoes" />
+            alt="Shoes"
+            className="w-full" />
         </figure>
         <div className="card-body">
           <p className="text-md font-medium">{item.name}</p>

@@ -108,7 +108,7 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
           </div>
 
           <div className="Cards">
-            <div className={`gap-x-5 gap-y-8 grid grid-cols-2 md:grid-cols-3   pb-10  grid-rows-2  w-full `}>
+            <div className={`gap-x-5 gap-y-8 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4   pb-10  grid-rows-2  w-full `}>
           {filteredProducts.length > 0 ? (
           filteredProducts.map((product) =>(
             <motion.div whileHover={{scale:1.1}}key={product._id} className=" rounded-md overflow-hidden card-compact cursor-pointer bg-lightPrimary shadow-md" >
