@@ -73,7 +73,7 @@ import contact_img from './contact_img.png'
 import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
-import kid_hero from './Kids_hero.webp'
+import kid_hero from './Kids_hero.png'
 import men_hero from './Men_hero.webp'
 import women_hero from './Women_hero.webp'
 

@@ -33,7 +33,7 @@ const Product = () => {
 
 
   return (
-    <div className="w-full  lg:flex gap-6 mt-10">
+    <div className="w-full layout  lg:flex gap-6 mt-10">
       <div  className="image-section lg:w-[40%] w-full rounded-md overflow-hidden ">
       <img src={product.image} alt={product.name} className=" object-contain w-full " />
       </div>

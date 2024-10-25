@@ -39,12 +39,12 @@ const Cart = () => {
   }, [total, Subtotal, subTotalPrice,]);
 
   return (
-    <section className="w-full">
+    <section className="w-full layout mt-5">
       <div className="flex items-start mt-5 border-b border-darkSecondary mb-6 pb-8">
         <MainTitle title1="MY" title2="CART" />
       </div>
 
-      <div className="lg:flex items-start">
+      <div className="lg:flex items-start lg:px-[4vw]">
         <div className="Cart-Items space-y-4 w-full lg:w-[70%]  pb-20">
           {cartItems.map((item) => {
             const cartItemSize = localCartItemsSize.find(
@@ -70,7 +70,7 @@ const Cart = () => {
                 </div>
 
                 <div className="div-3">
-                  <div className="flex lg:flex-row  items-center flex-col-reverse lg:gap-20 lg:ps-20 gap-1">
+                  <div className="flex lg:flex-row  items-center flex-col-reverse lg:gap-20 lg:ps-20 gap-4">
                     <p className="text-md font-bold ">
                       {item.price}&nbsp;PKR
                     </p>

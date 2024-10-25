@@ -50,10 +50,10 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
 })
 
   return (
-    <section className="block 300  mt-10 lg:flex gap-10 w-full   ">
+    <section className="block layout  mt-10 lg:flex gap-10 w-full   ">
       <div className={`filter lg:w-80 mb-5 lg:mb-0 w-full  lg:flex lg:flex-col gap-2 lg:pt-8`}>
         <div className="flex gap-2 items-center " onClick={()=>handleMobileFilter(true)}>
-      <h4 className="text-xl font-bold cursor-pointer  lg:cursor-none">FILTERS</h4>
+      <h4 className="text-xl font-bold cursor-pointer lg:mt-5  lg:cursor-none">FILTERS</h4>
       <ChevronRight className="lg:hidden flex cursor-pointer"/>
         </div>
         <div className={`${mobileFilter ? "flex flex-col": "hidden"}  lg:flex lg:flex-col`}>
@@ -108,7 +108,7 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
           </div>
 
           <div className="Cards">
-            <div className={`gap-x-5 gap-y-8 grid grid-cols-2 md:grid-cols-3 pb-10  grid-rows-2  w-full `}>
+            <div className={`gap-x-5 gap-y-8 grid grid-cols-2 md:grid-cols-3   pb-10  grid-rows-2  w-full `}>
           {filteredProducts.length > 0 ? (
           filteredProducts.map((product) =>(
             <motion.div whileHover={{scale:1.1}}key={product._id} className=" rounded-md overflow-hidden card-compact cursor-pointer bg-lightPrimary shadow-md" >
@@ -116,7 +116,8 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
                 <figure>
                   <img
                     src={product.image}
-                    alt="Shoes" />
+                    alt="Shoes"
+                    className="w-full" />
                 </figure>
                 <div className="card-body">
                   <p className="text-md font-medium">{product.name}</p>

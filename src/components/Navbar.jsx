@@ -40,7 +40,7 @@ const Navbar = () => {
   },[])
   
   return (
-    <div className="flex  justify-between items-center py-5 ">
+    <div className="flex layout  justify-between items-center pt-4  ">
 
         <div className="nav-logo">
           <Link to="/" className="cursor-pointer">
