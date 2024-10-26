@@ -21,7 +21,7 @@ const carouselItems = [
   }
 ];
 
-const Hero = () => {
+const HomeCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
 
@@ -94,4 +94,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default HomeCarousel;

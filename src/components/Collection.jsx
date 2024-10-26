@@ -113,11 +113,11 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
           filteredProducts.map((product) =>(
             <motion.div whileHover={{scale:1.1}}key={product._id} className=" rounded-md  overflow-hidden card-compact cursor-pointer bg-lightPrimary glass" >
                   <Link to={`/product/${product._id}`} >
-                <figure>
+                <figure className=" w-full overflow-hidden ">
                   <img
                     src={product.image}
                     alt="Shoes"
-                    className="w-full h-80 object-cover" />
+                    className="w-full xl:h-[26rem] lg:h-[22rem] md:h-[18rem] h-[15rem] object-cover" />
                 </figure>
                 <div className="flex flex-col gap-1 text-sm px-3 py-2 pt-3 ">
                   <p className=" font-medium">{product.name}</p>

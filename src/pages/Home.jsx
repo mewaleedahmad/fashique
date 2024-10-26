@@ -1,13 +1,14 @@
-import Hero from "../components/Hero"
-import HomeItems from "../components/HomeItems"
-import {Headset,CircleCheckBig,Repeat} from "lucide-react"
+import HomeCarousel from "../components/HomeCarousel"
 import Marquee from "../components/Marquee"
-// 
+import HomeCards from "../components/HomeCards"
+import {Headset,CircleCheckBig,Repeat} from "lucide-react"
+
+
 const Home = () => {
   return (
     <section className="overflow-hidden ">
       <div className="layout flex">
-      <Hero />
+      <HomeCarousel />
       </div>
       <div className="pt-14">
       <Marquee/>
@@ -19,7 +20,7 @@ const Home = () => {
       <path strokeLinecap="round" strokeWidth="20" pathLength="1" d="M-335,54 C-335,54 -171,-58 -194,-3 C-217,52 -224.1199951171875,73.552001953125 -127,11 C-68,-27 -137,50 -33,42 C31.43899917602539,37.042999267578125 147.14700317382812,-29.308000564575195 335,2"></path>
     </svg>
       </div>
-      <HomeItems for="Men" className="py-12"/>
+      <HomeCards for="Men" className="py-12"/>
       </section>
 
       <div className=" layout About md:hidden space-y-12 md:space-y-0 gap-6 justify-evenly  text-center w-full mb-20 mt-14">
