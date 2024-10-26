@@ -4,6 +4,7 @@ import { assets } from "../assets/images/assets"
 import { useEffect, useState } from "react"
 import { ChevronLeft } from "lucide-react"
 import { motion } from "framer-motion"
+import { use } from "framer-motion/client"
 
 const NavLinks = [
   {
@@ -29,15 +30,13 @@ const NavLinks = [
   
 ]
 
-
-const Navbar = () => {
+const Navbar = ({cart}) => {
   const [isMenuVisible,setIsMenuVisible]=useState(false)
   const [cartCount,setCartCount] = useState(0)
-
+  
   useEffect(()=>{
-    const cart = JSON.parse(localStorage.getItem("cart"))
-    setCartCount(cart === null ? 0 : cart.length)
-  },[])
+    setCartCount(cart.length)
+  },[cart])
   
   return (
     <div className="flex layout  justify-between items-center pt-4  ">

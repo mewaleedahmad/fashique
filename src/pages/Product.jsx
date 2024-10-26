@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { products } from "../assets/images/assets";
 import { useParams } from "react-router-dom";
 
-// eslint-disable-next-line react/prop-types
 const Product = () => {
   const { id } = useParams();
   const [selectedSize, setSelectedSize] = useState("");
@@ -26,9 +25,6 @@ const Product = () => {
       notifyAdded();
     }
     localStorage.setItem("cart", JSON.stringify(cart));
-    setTimeout(()=>{
-      location.reload()
-    },1000)
   }
 
 
