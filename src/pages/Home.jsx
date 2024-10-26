@@ -9,6 +9,9 @@ const Home = () => {
       <div className="layout flex">
       <Hero />
       </div>
+      <div className="pt-14">
+      <Marquee/>
+      </div>
       <section className="layout">
       <div className="flex flex-col text-3xl lg:text-[2.8rem]  gap-1 items-center mt-14 py-4 justify-center">
         <h1>Trending Now</h1>
@@ -18,7 +21,6 @@ const Home = () => {
       </div>
       <HomeItems for="Men" className="py-12"/>
       </section>
-      <Marquee/>
 
       <div className=" layout About md:hidden space-y-12 md:space-y-0 gap-6 justify-evenly  text-center w-full mb-20 mt-14">
         <div className="flex flex-col items-center justify-center gap-1">

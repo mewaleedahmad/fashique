@@ -108,20 +108,20 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
           </div>
 
           <div className="Cards">
-            <div className={`gap-x-5 gap-y-8 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4   pb-10  grid-rows-2  w-full `}>
+            <div className={`gap-x-3 gap-y-4 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4   pb-10  grid-rows-2  w-full `}>
           {filteredProducts.length > 0 ? (
           filteredProducts.map((product) =>(
-            <motion.div whileHover={{scale:1.1}}key={product._id} className=" rounded-md overflow-hidden card-compact cursor-pointer bg-lightPrimary shadow-md" >
+            <motion.div whileHover={{scale:1.1}}key={product._id} className=" rounded-md  overflow-hidden card-compact cursor-pointer bg-lightPrimary glass" >
                   <Link to={`/product/${product._id}`} >
                 <figure>
                   <img
                     src={product.image}
                     alt="Shoes"
-                    className="w-full" />
+                    className="w-full h-80 object-cover" />
                 </figure>
-                <div className="card-body">
-                  <p className="text-md font-medium">{product.name}</p>
-                  <p className="text-md text-red-800 font-bold">{product.price}&nbsp;PKR</p>
+                <div className="flex flex-col gap-1 text-sm px-3 py-2 pt-3 ">
+                  <p className=" font-medium">{product.name}</p>
+                  <p className=" text-red-800 font-bold">{product.price}&nbsp;PKR</p>
                 </div >
                 </Link>
               </motion.div>))) : <p className="text-xl font-bold absolute top-60 left-70 text-red-800">Currently No Products Available</p>
