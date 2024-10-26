@@ -6,7 +6,7 @@ import Marquee from "../components/Marquee"
 const Home = () => {
   return (
     <section className="overflow-hidden ">
-      <div className="layout">
+      <div className="layout flex">
       <Hero />
       </div>
       <section className="layout">

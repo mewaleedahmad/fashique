@@ -53,6 +53,7 @@ import p_img49 from './p_img49.png'
 import p_img50 from './p_img50.png'
 import p_img51 from './p_img51.png'
 import p_img52 from './p_img52.png'
+import mentopa from "./mentopa.webp"
 
 
 import search_icon from './search_icon.png'
@@ -62,7 +63,6 @@ import menu_icon from './menu_icon.png'
 import kid_hero from './Kids_hero.webp'
 import men_hero from './Men_hero.webp'
 import women_hero from './Women_hero.webp'
-
 
 export const assets = {
     cart_icon,
@@ -76,6 +76,18 @@ export const assets = {
 }
 
 export const products = [
+    // {
+    //     _id: "mentopa",
+    //     name: "Red Winter Jacked",
+    //     description: "Crafted from premium, breathable fabric, this garment offers a perfect blend of comfort and style. With a modern fit and durable stitching, it's ideal for everyday wear and long-lasting use.",
+    //     price: 5000,
+    //     image: [mentopa],
+    //     category: "Men",
+    //     subCategory: "Topwear",
+    //     sizes: ["S", "M", "L"],
+    //     date: 1716634345448,
+    //     bestseller: true
+    // },
     {
         _id: "aaaaa",
         name: "Women Round Neck Cotton Top",

@@ -57,7 +57,7 @@ const Hero = () => {
 
   return (
     <div
-      className="relative w-full   lg:h-[80vh] overflow-hidden  bg-lightPrimary border mt-4 border-darkPrimary cursor-pointer"
+      className="relative w-full  lg:h-[80vh] overflow-hidden  bg-lightPrimary border mt-4 border-darkPrimary cursor-pointer"
       onClick={handleDivClick}
     >
       <div className="absolute  inset-0 flex items-center justify-between p-4">
@@ -68,10 +68,10 @@ const Hero = () => {
           <ChevronRight size={24} />
         </button>
       </div>
-      <div className="flex flex-col  md:flex-row h-full">
-        <div className="w-full md:w-1/2 p-8 flex flex-col gap-6 items-center justify-center ">
+      <div className="flex flex-col justify-center w-full  md:flex-row ">
+        <div className="w-full lg:w-1/2 lg:h-[80vh] p-8 flex flex-col gap-6 items-center justify-center ">
           <div className='flex gap-2 md:gap-4 justify-center items-center'>
-            <p className='w-12 md:w-20 lg:24 h-[2px] bg-darkPrimary'></p>
+            <p className='w-12 md:w-20 lg:w-24 h-[2px] bg-darkPrimary'></p>
             <p className="md:text-xl lg:text-3xl text-lg font-bold">LATEST ARRIVALS</p>
           </div>
           <h1 className=" lg:text-3xl md:text-3xl text-xl font-bold text-nowrap">{currentSlide.title}</h1>
@@ -83,11 +83,11 @@ const Hero = () => {
             >
               EXPLORE NOW
             </Link>
-            <p className='w-12 md:w-20 lg:24 h-[2px] bg-darkPrimary'></p>
+            <p className='w-12 md:w-20 lg:w-24 h-[2px] bg-darkPrimary'></p>
           </div>
         </div>
-        <div className="w-full md:w-1/2  bg-gray-200">
-          <img src={currentSlide.image} alt={currentSlide.title} className="w-full object-contain  " />
+        <div className="w-full lg:w-1/2 ">
+          <img src={currentSlide.image} alt={currentSlide.title} className="w-full  object-cover  " />
         </div>
       </div>
     </div>
