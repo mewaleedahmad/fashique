@@ -55,20 +55,6 @@ import p_img51 from './p_img51.png'
 import p_img52 from './p_img52.png'
 
 
-// import logo from './logo.png'
-// import hero_img from './hero_img.png'
-// import bin_icon from './bin_icon.png'
-// import dropdown_icon from './dropdown_icon.png'
-// import exchange_icon from './exchange_icon.png'
-// import quality_icon from './quality_icon.png'
-// import star_dull_icon from './star_dull_icon.png'
-// import star_icon from './star_icon.png'
-// import support_img from './support_img.png'
-// import about_img from './about_img.png'
-// import contact_img from './contact_img.png'
-// import razorpay_logo from './razorpay_logo.png'
-// import stripe_logo from './stripe_logo.png'
-// import cross_icon from './cross_icon.png'
 import search_icon from './search_icon.png'
 import profile_icon from './profile_icon.png'
 import cart_icon from './cart_icon.png'
@@ -76,6 +62,7 @@ import menu_icon from './menu_icon.png'
 import kid_hero from './Kids_hero.webp'
 import men_hero from './Men_hero.webp'
 import women_hero from './Women_hero.webp'
+
 
 export const assets = {
     cart_icon,

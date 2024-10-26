@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { products } from "../assets/images/assets";
 import { useParams } from "react-router-dom";
 
-const Product = () => {
+const Product = ({cart,setCart}) => {
   const { id } = useParams();
   const [selectedSize, setSelectedSize] = useState("");
   const [sizeNotSelectedError, setSizeNotSelectedError] = useState(false);
@@ -16,18 +16,17 @@ const Product = () => {
 
   const addToCart = () => {
     const item = { id, selectedSize};
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const idAlreadyExits = cart.find(i => i.id === id);
-    if(idAlreadyExits){
+    if(cart.find(i => i.id === id)){
       notifyError();
     }else{
       cart.push(item);
+      localStorage.setItem("cart", JSON.stringify(cart));
       notifyAdded();
     }
-    localStorage.setItem("cart", JSON.stringify(cart));
+    const fetchCart = JSON.parse(localStorage.getItem("cart"));
+    setCart(fetchCart);
   }
-
-
+ 
   return (
     <div className="w-full layout  lg:flex gap-6 mt-10">
       <div  className="image-section lg:w-[40%] w-full rounded-md overflow-hidden ">

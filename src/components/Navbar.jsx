@@ -4,7 +4,6 @@ import { assets } from "../assets/images/assets"
 import { useEffect, useState } from "react"
 import { ChevronLeft } from "lucide-react"
 import { motion } from "framer-motion"
-import { use } from "framer-motion/client"
 
 const NavLinks = [
   {
