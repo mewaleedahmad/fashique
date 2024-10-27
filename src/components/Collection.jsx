@@ -1,6 +1,6 @@
 import MainTitle from "./MainTitle";
 import { useState} from "react";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, MoveLeft, MoveLeftIcon, Plus,SlidersHorizontal } from "lucide-react";
 import { products } from "../assets/images/assets";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -18,13 +18,13 @@ const productPrice = [
 // eslint-disable-next-line react/prop-types
 const Collection = ({ category,title1,title2 }) => {
   
-  const [mobileFilter,SetMobileFilter] = useState(false);
+  const [filter,setFilter] = useState(false);
   const [sortOrder,setSortOrder]= useState("Relevant")
   const [subCategory,setSubCategory] = useState([]);
   const [priceRange,setPriceRange] = useState([0,Infinity]);
 
-const handleMobileFilter = ()=>{
-  SetMobileFilter(!mobileFilter)
+const handleFilter = ()=>{
+  setFilter(!filter)
 }
 
 const handleSubCategory = (type) => {
@@ -50,31 +50,36 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
 })
 
   return (
-    <section className="block layout  mt-10 lg:flex gap-10 w-full   ">
-      <div className={`filter lg:w-80 mb-5 lg:mb-0 w-full  lg:flex lg:flex-col gap-2 lg:pt-8`}>
-        <div className="flex gap-2 items-center " onClick={()=>handleMobileFilter(true)}>
-      <h4 className="text-xl font-bold cursor-pointer lg:mt-5  lg:cursor-none">FILTERS</h4>
-      <ChevronRight className="lg:hidden flex cursor-pointer"/>
-        </div>
-        <div className={`${mobileFilter ? "flex flex-col": "hidden"}  lg:flex lg:flex-col`}>
-        <div className="product-type border rounded-sm border-darkSecondary mt-5 px-5 py-4">
-          <p className="font-semibold pb-4">TYPE</p>
+    <>
+           <MainTitle title1={title1} title2={title2} className="layout mt-8 lg:mt-16 " />
+          <section className="block layout  mt-6 lg:mt-0 lg:flex gap-3 w-full   ">
+      <div className={`filter ${filter ? "flex flex-col": "hidden"} absolute lg:relative lg:mt-12 lg:px-0 px-6 py-4   bg-lightPrimary h-screen  w-full lg:w-[20vw] left-0 z-50  `}>
+        
+        <div className={`flex flex-col`}>
+          <div className="flex justify-between items-center">
+            <p className="font-bold text-2xl">FILTERS</p>
+            <button onClick={()=>handleFilter(false)} >
+          <MoveLeft className="size-9"/>
+          </button>
+          </div>
+        <div className="product-type  mt-4 px-5 lg:px-1 py-2">
+          <p className="font-bold text-xl pb-4">Type</p>
           {productType.map((type, i) => (
             <div className="flex justify-start pb-2 gap-3 items-center" key={i}>
               <input
                 type="checkbox"
                 name="type"
-                className="checkbox checkbox-xs"
+                className="checkbox checkbox-sm font-bold"
                 onChange={()=>handleSubCategory(type)}
                 checked={subCategory.includes(type)}
               />
-              <p>{type}</p>
+              <p className="text-md font-bold">{type}</p>
             </div>
           ))}
         </div>
 
-        <div className="Price-Filter border rounded-sm flex flex-col gap-4 overflow-hidden  border-darkSecondary mt-5 px-5 py-4">
-          <p className="font-semibold  block">PRICE</p>
+        <div className="Price-Filter  flex flex-col gap-4 overflow-hidden  px-5 lg:px-1 ">
+          <p className="font-semibold  text-xl block">Price</p>
           {productPrice.map((price, i) => (
             <div
               className="flex justify-start  gap-3  text-justify items-center"
@@ -82,24 +87,22 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
             >
               <input
                 type="radio"
-                
                 name="price"
-                className="checkbox radio-xs"
+                className="checkbox radio-sm "
                 onChange={()=>handlePriceRange(price.range)}
               />
-              <p>{price.label}&nbsp;PKR</p>
+              <p className="text-md font-bold">{price.label}&nbsp;PKR</p>
             </div>
           ))}
         </div>
         </div>
       </div>
 
-      <div className="products  md:w-full  ">
-        <div className="flex flex-col gap-6">
-          <div className="flex lg:justify-between gap-4 lg:gap-0 flex-col lg:flex-row items-center  pb-4">
-            <MainTitle title1={title1} title2={title2} className="self-start" />
-            <div className="self-end mt-4">
-              <select value={sortOrder} onChange={(e)=>setSortOrder(e.target.value)} className="px-2 py-4  bg-lightPrimary outline-none shadow-sm rounded-md lg:text-md text-sm font-bold border-darkSecondary border">
+      <div className="products  md:w-full ">
+        <div className="flex flex-col gap-2">
+          <div className="flex justify-end gap-4 text-xl lg:gap-0 flex-row  items-center">
+            <div className=" mt-4 text-lg  ">
+              <select value={sortOrder} onChange={(e)=>setSortOrder(e.target.value)} className="px-1 py-3  bg-lightPrimary outline-none shadow-sm rounded-md lg:text-md text-sm font-bold border-darkSecondary border">
               <option  className="font-regular " selected>Sort By : Relevant </option>
               <option  className="font-regular ">Sort By : Low to High</option>
               <option  className="font-regular ">Sort By : High to Low </option>
@@ -107,7 +110,12 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
             </div>
           </div>
 
-          <div className="Cards">
+          <div className={`flex font-bold gap-2 ${filter === false ? "flex" : "invisible"} items-center mb-2 cursor-pointer`} onClick={()=>handleFilter(true)}>
+      <h4 className="text-xl">FILTERS</h4>
+      <SlidersHorizontal className="size-4" />
+        </div>
+
+          <div className="Cards  ">
             <div className={`gap-x-3 gap-y-4 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4   pb-10  grid-rows-2  w-full `}>
           {filteredProducts.length > 0 ? (
           filteredProducts.map((product) =>(
@@ -133,6 +141,7 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
           </div>
           </div>
           </section>
+          </>
   );
 };
 

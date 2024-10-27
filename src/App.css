@@ -3,3 +3,7 @@ a.active hr {
   display: block;
 }
 
+input[type="radio"].checkbox:indeterminate {
+  background-image: none !important;
+  background-color : var(--bgdarkSecondary);
+}

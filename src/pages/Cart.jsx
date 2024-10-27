@@ -41,7 +41,7 @@ const Cart = ({cart,setCart}) => {
       <div className="flex items-start mt-5 border-b border-darkSecondary mb-6 pb-8">
         <MainTitle title1="MY" title2="CART" />
       </div>
-      {cart.length === 0 && <p className="uppercase text-xl lg:text-2xl font-semibold p-4 lg:p-10">Nothing in Cart...</p>}
+      {cart.length === 0 && <p className=" text-xl lg:text-2xl text-red-800 font-semibold p-4 lg:p-10">Cart is empty</p>}
 
       <div className="lg:flex  lg:px-[4vw]">
         <div className="Cart-Items space-y-4 w-full lg:w-[70%]   pb-20">
@@ -51,12 +51,12 @@ const Cart = ({cart,setCart}) => {
             ).selectedSize;
          
             return (
-              <div key={item._id} className="flex items-center  gap-2">
+              <div key={item._id} className="flex items-center gap-2 lg:gap-4">
                 <div className="div-1 rounded-md overflow-auto ">
                   <img
                     src={item.image}
                     alt="Product"
-                    className="lg:w-72 lg:h-28 w-32 h-20 object-cover"
+                    className="lg:w-56 lg:h-24 w-32 h-20 object-cover"
                   />
                 </div>
                 <div className="div-2 flex flex-grow  w-full flex-col gap-2 ">

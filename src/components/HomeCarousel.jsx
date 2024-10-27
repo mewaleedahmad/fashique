@@ -87,7 +87,7 @@ const HomeCarousel = () => {
           </div>
         </div>
         <div className="w-full lg:w-1/2 ">
-          <img src={currentSlide.image} alt={currentSlide.title} className="w-full  object-cover  " />
+          <img src={currentSlide.image} alt={currentSlide.title} className="w-full h-full object-cover  " />
         </div>
       </div>
     </div>
