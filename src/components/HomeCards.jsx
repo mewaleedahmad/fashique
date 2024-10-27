@@ -1,7 +1,7 @@
 import { products } from "../assets/images/assets";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-const Items = products.filter(item => item.bestseller).slice(0,8)
+const Items = products.filter(item => item.bestseller).slice(0,12)
 
 export default function HomeCards({className}) {
   return (
@@ -18,7 +18,9 @@ export default function HomeCards({className}) {
   />
 </figure>
         <div className="flex flex-col gap-1 text-sm px-3 py-2 pt-3">
-          <p className="text-md font-medium">{item.name}</p>
+        <p className=" font-medium capitalize">
+           {item.category === "Men" && <span>Men</span> || item.category === "Women" && <span>Women</span>}&nbsp;{item.name}
+       </p>
           <p className="text-md text-red-800 font-bold">{item.price}&nbsp;PKR</p>
         </div>
         </Link>

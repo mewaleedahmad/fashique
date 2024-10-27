@@ -120,7 +120,9 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
                     className="w-full xl:h-[26rem] lg:h-[22rem] md:h-[18rem] h-[15rem] object-cover" />
                 </figure>
                 <div className="flex flex-col gap-1 text-sm px-3 py-2 pt-3 ">
-                  <p className=" font-medium">{product.name}</p>
+                  <p className=" font-medium capitalize">
+                  {product.category === "Men" && <span>Men</span> || product.category === "Women" && <span>Women</span>}&nbsp;{product.name}
+                  </p>
                   <p className=" text-red-800 font-bold">{product.price}&nbsp;PKR</p>
                 </div >
                 </Link>
