@@ -11,13 +11,19 @@ const Marquee = ({ className }) => {
         className={`w-full gap-12 first items-center text-nowrap flex ${className}`}
         style={{ display: 'flex' }}
       >
-        <div className="flex gap-12">
+        <div className="flex gap-8">
           <h4 className="text-[2.5rem] ">FREE EXCHANGE</h4>
           <h4 className="text-[2.5rem] ">FREE RETURNS</h4>
           <h4 className="text-[2.5rem] ">24/7 CUSTOMER SUPPORT</h4>
         </div>
 
-        <div className="flex gap-12">
+        <div className="flex gap-8">
+          <h4 className="text-[2.5rem] ">FREE EXCHANGE</h4>
+          <h4 className="text-[2.5rem] ">FREE RETURNS</h4>
+          <h4 className="text-[2.5rem] ">24/7 CUSTOMER SUPPORT</h4>
+        </div>
+        
+        <div className="flex gap-8">
           <h4 className="text-[2.5rem] ">FREE EXCHANGE</h4>
           <h4 className="text-[2.5rem] ">FREE RETURNS</h4>
           <h4 className="text-[2.5rem] ">24/7 CUSTOMER SUPPORT</h4>

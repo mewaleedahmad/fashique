@@ -28,14 +28,14 @@ const Product = ({cart,setCart}) => {
   }
  
   return (
-    <div className="w-full layout  lg:flex gap-6 mt-10">
-      <div  className="image-section lg:w-[40%] w-full rounded-md overflow-hidden ">
-      <img src={product.image} alt={product.name} className=" object-contain w-full " />
+    <div className="w-full layout   lg:flex gap-6 mt-10">
+      <div  className="image-section lg:w-[35%]  w-full rounded-md overflow-hidden ">
+      <img src={product.image} alt={product.name} className=" object-cover transition-transform duration-200 ease-in-out hover:scale-125 " />
       </div>
       <div className="details-section lg:w-[60%] w-full flex flex-col gap-4 py-10 px-3 lg:px-6 ">
-        <p className="text-2xl md:text-3xl font-medium">{product.name}</p>
+        <p className="text-2xl md:text-3xl font-medium capitalize">{product.name}</p>
         <p className="text-red-800 text-xl md:text-2xl ps-1 font-bold">{product.price} PKR</p>
-        <p className="mt-5 text-sm md:text-[1rem] text-justify">{product.description}</p>
+        <p className="mt-5 text-sm md:text-[1rem] ">{product.description}</p>
         <p className="font-bold text-sm mt-4">SELECT SIZE</p>
         <div className="flex gap-2">
           {product.sizes.map((size, i) => (

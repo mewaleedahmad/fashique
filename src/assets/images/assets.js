@@ -821,7 +821,7 @@ export const products = [
 
     {
         _id: "kidstop1",
-        name: "Boys denim zipper jacket w",
+        name: "Boys denim zipper jacket",
         description: "Crafted from premium, breathable fabric, this garment offers a perfect blend of comfort and style. With a modern fit and durable stitching, it's ideal for everyday wear and long-lasting use.",
         price: 4999,
         image: [kidstop1],

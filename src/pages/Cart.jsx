@@ -43,7 +43,7 @@ const Cart = ({cart,setCart}) => {
       </div>
       {cart.length === 0 && <p className="uppercase text-xl lg:text-2xl font-semibold p-4 lg:p-10">Nothing in Cart...</p>}
 
-      <div className="lg:flex items-start lg:px-[4vw]">
+      <div className="lg:flex  lg:px-[4vw]">
         <div className="Cart-Items space-y-4 w-full lg:w-[70%]   pb-20">
           {cartItems.map((item) => {
             const cartItemSize = localCartItemsSize.find(
@@ -52,15 +52,15 @@ const Cart = ({cart,setCart}) => {
          
             return (
               <div key={item._id} className="flex items-center  gap-2">
-                <div className="div-1 overflow-hidden">
+                <div className="div-1 rounded-md overflow-auto ">
                   <img
                     src={item.image}
                     alt="Product"
-                    className="w-28 h-24 object-contain"
+                    className="lg:w-72 lg:h-28 w-32 h-20 object-cover"
                   />
                 </div>
-                <div className="div-2 flex flex-grow  flex-col gap-2 ">
-                  <p className="text-lg leading-none lg:leading-7">{item.name}</p>
+                <div className="div-2 flex flex-grow  w-full flex-col gap-2 ">
+                  <p className="text-lg leading-none capitalize lg:leading-7">{item.name}</p>
                   <div className="flex items-center gap-2 lg:gap-4">
                     <p className="text-sm bg-lightSecondary border  border-darkSecondary rounded-sm px-2 lg:px-3 lg:py-1 py-[3px] text-center">
                       {cartItemSize || "N/A"}
@@ -70,7 +70,7 @@ const Cart = ({cart,setCart}) => {
 
                 <div className="div-3 ">
                   <div className="flex lg:flex-row  w-full items-center justify-between flex-col-reverse lg:gap-20 lg:ps-20 gap-4">
-                    <p className="text-md font-bold lg:ps-20 ">
+                    <p className="text-sm lg:text-[1rem] font-bold lg:ps-20 ">
                       {item.price}&nbsp;PKR
                     </p>
                     <button

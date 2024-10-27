@@ -14,12 +14,12 @@ export default function HomeCards({className}) {
   <img
     src={item.image}
     alt={item.name}
-    className="w-full xl:h-[26rem] lg:h-[22rem] md:h-[18rem] h-[15rem] object-cover   "
+    className="w-full xl:h-[26rem] lg:h-[22rem] md:h-[18rem] h-[15rem] object-cover transition-transform duration-200 ease-in-out hover:scale-125   "
   />
 </figure>
-        <div className="flex flex-col gap-1 text-sm px-3 py-2 pt-3">
+        <div className="flex  flex-col gap-1 text-sm px-3 py-2 pt-3">
         <p className=" font-medium capitalize">
-           {item.category === "Men" && <span>Men</span> || item.category === "Women" && <span>Women</span>}&nbsp;{item.name}
+           {item.category === "Men" && <span>Men&nbsp;</span> || item.category === "Women" && <span>Women&nbsp;</span>}{item.name}
        </p>
           <p className="text-md text-red-800 font-bold">{item.price}&nbsp;PKR</p>
         </div>

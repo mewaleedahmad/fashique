@@ -111,19 +111,19 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
             <div className={`gap-x-3 gap-y-4 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4   pb-10  grid-rows-2  w-full `}>
           {filteredProducts.length > 0 ? (
           filteredProducts.map((product) =>(
-            <motion.div whileHover={{scale:1.1}}key={product._id} className=" rounded-md  overflow-hidden card-compact cursor-pointer bg-lightPrimary glass" >
+            <motion.div key={product._id} className=" rounded-md  overflow-hidden card-compact cursor-pointer bg-lightPrimary glass" >
                   <Link to={`/product/${product._id}`} >
                 <figure className=" w-full overflow-hidden ">
                   <img
                     src={product.image}
                     alt="Shoes"
-                    className="w-full xl:h-[26rem] lg:h-[22rem] md:h-[18rem] h-[15rem] object-cover" />
+                    className="w-full xl:h-[26rem] lg:h-[22rem] md:h-[18rem] h-[15rem] object-cover transition-transform duration-200 ease-in-out hover:scale-125" />
                 </figure>
-                <div className="flex flex-col gap-1 text-sm px-3 py-2 pt-3 ">
+                <div className="flex  flex-col gap-1 text-sm px-3 py-2 pt-3 ">
                   <p className=" font-medium capitalize">
-                  {product.category === "Men" && <span>Men</span> || product.category === "Women" && <span>Women</span>}&nbsp;{product.name}
+                  {product.category === "Men" && <span>Men&nbsp;</span> || product.category === "Women" && <span>Women&nbsp;</span>}{product.name}
                   </p>
-                  <p className=" text-red-800 font-bold">{product.price}&nbsp;PKR</p>
+                  <p className=" text-red-800 text-md font-bold">{product.price}&nbsp;PKR</p>
                 </div >
                 </Link>
               </motion.div>))) : <p className="text-xl font-bold absolute top-60 left-70 text-red-800">Currently No Products Available</p>
