@@ -38,6 +38,19 @@ html,body{
       .form-style{
         @apply border border-darkSecondary  rounded-sm px-3 py-2  bg-lightPrimary
       }
-      
-      
+}
+
+
+a.active hr {
+  display: block;
+}
+
+input[type="radio"].checkbox:indeterminate {
+  background-image: none !important;
+  background-color : var(--bgdarkSecondary);
+}
+
+input::placeholder {
+  color: black;
+  opacity: 0.6;
 }
