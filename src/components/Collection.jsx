@@ -2,7 +2,7 @@ import MainTitle from "./MainTitle";
 import { useState} from "react";
 import { MoveLeft,SlidersHorizontal } from "lucide-react";
 import { products } from "../assets/images/assets";
-import { motion } from "framer-motion";
+import { AnimatePresence, easeInOut, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const productType = ["Topwear", "Bottomwear", "Footwear"];
@@ -53,15 +53,26 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
     <>
            <MainTitle title1={title1} title2={title2} className="layout mt-8 lg:mt-16 " />
           <section className="block layout  mt-6 lg:mt-0 lg:flex gap-3 w-full   ">
-      <div className={`filter ${filter ? "flex flex-col": "hidden"} absolute lg:relative lg:mt-12 lg:px-0 px-6 py-4   bg-lightPrimary h-screen  w-full lg:w-[20vw] left-0 z-50  `}>
-        
+            <AnimatePresence>
+            {filter &&
+      <motion.div initial={{ width: 0, opacity: 0 }}
+      animate={{ width: "100%", opacity: 1 }}
+      exit={{
+        width: 0,
+        opacity: 0,
+        transition: {
+          duration: 0.3, 
+          ease: [0.3, 0, 0.2, 1], 
+        },
+      }}
+      transition={{ duration: 0.3, ease: "linear", }} 
+      className={`filter  absolute lg:relative  lg:max-w-[16vw] lg:mt-14 lg:px-0 px-6 py-4   bg-lightPrimary h-screen   left-0 z-50  `}
+      >
         <div className={`flex flex-col`}>
-          <div className="flex justify-between items-center">
-            <p className="font-bold text-2xl">FILTERS</p>
-            <button onClick={()=>handleFilter(false)} >
-          <MoveLeft className="size-9"/>
+          <button onClick={()=>handleFilter(false)} className="flex justify-between pe-4 items-center">
+            <p className="font-bold text-xl">FILTERS</p>
+            <MoveLeft className="size-8 "/>
           </button>
-          </div>
         <div className="product-type  mt-4 px-5 lg:px-1 py-2">
           <p className="font-bold text-xl pb-4">Type</p>
           {productType.map((type, i) => (
@@ -96,7 +107,9 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
           ))}
         </div>
         </div>
-      </div>
+      </motion.div>
+      }
+      </AnimatePresence>
 
       <div className="products  md:w-full ">
         <div className="flex flex-col gap-2">
@@ -109,6 +122,7 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
             </select>
             </div>
           </div>
+
 
           <div className={`flex font-bold gap-2 ${filter === false ? "flex" : "invisible"} items-center mb-2 cursor-pointer`} onClick={()=>handleFilter(true)}>
       <h4 className="text-xl">FILTERS</h4>
@@ -134,12 +148,13 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
                   <p className=" text-red-800 text-md font-bold">{product.price}&nbsp;PKR</p>
                 </div >
                 </Link>
-              </motion.div>))) : <p className="text-xl font-bold absolute top-60 left-70 text-red-800">Currently No Products Available</p>
+              </motion.div>))) : <p className="text-xl font-bold absolute top-60 left-70 pt-16 text-red-800">Currently No Products Available</p>
             }
             </div>
           </div>
           </div>
           </div>
+
           </section>
           </>
   );
