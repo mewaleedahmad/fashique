@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom" 
-import "../app.css"
 import { assets } from "../assets/images/assets"
 import { useEffect, useState } from "react"
 import { ChevronLeft } from "lucide-react"
