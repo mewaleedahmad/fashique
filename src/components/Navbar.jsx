@@ -32,9 +32,9 @@ const NavLinks = [
 const Navbar = ({cart}) => {
   const [isMenuVisible,setIsMenuVisible]=useState(false)
   const [cartCount,setCartCount] = useState(0)
-  
   useEffect(()=>{
-    setCartCount(cart.length)
+    const cartdata = cart ? cart.length : []
+    setCartCount(cartdata)
   },[cart])
   
   return (

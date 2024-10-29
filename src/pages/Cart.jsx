@@ -2,12 +2,13 @@ import MainTitle from "../components/MainTitle";
 import { products } from "../assets/images/assets";
 import { Trash2 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Cart = ({cart,setCart}) => {
 
   const shippingCharges = 300;
-  const [total, SetTotal] = useState(null);
-  const [Subtotal, setSubTotal] = useState(null);
+  const [total, SetTotal] = useState(0);
+  const [Subtotal, setSubTotal] = useState(0);
 
   const localCartItemsId = cart ? cart.filter((item) => item.id) : [];
   const localCartItemsSize = cart ? cart.filter((item) => item.selectedSize) : [];
@@ -35,6 +36,11 @@ const Cart = ({cart,setCart}) => {
     setSubTotal(subTotalPrice );
     SetTotal(Subtotal + shippingCharges);
   }, [total, Subtotal, subTotalPrice,]);
+
+  useEffect(()=>{
+   (Subtotal !== null || 0)  &&  localStorage.setItem("subTotal",Subtotal)
+  })
+
 
   return (
     <section className="w-full layout mt-5 ">
@@ -104,9 +110,9 @@ const Cart = ({cart,setCart}) => {
                 <p>Total</p>
                 <p>{total}&nbsp;PKR</p>
               </div>
-              <button className="btn btn-outline w-full mt-8 bg-darkPrimary text-lightPrimary text-[1rem] font-bold">
+              <Link to="/checkout" className="btn btn-outline w-full mt-8 bg-darkPrimary text-lightPrimary text-[1rem] font-bold">
                 Check Out
-              </button>
+              </Link>
             </div>
           </div>
         )}

@@ -6,12 +6,20 @@ import Women from "./pages/Women"
 import Kids from "./pages/Kids"
 import Product from "./pages/Product"
 import Cart from "./pages/Cart"
+import Checkout from "./pages/Checkout"
 import Navbar from "./components/Navbar"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+
 
 
 const App = () => {
-  const [cart,setCart] = useState(()=>JSON.parse(localStorage.getItem("cart")) || [])
+  useEffect(()=>{
+    if(!localStorage.getItem("cart")){
+      localStorage.setItem("cart", JSON.stringify([]));
+    }
+  })
+  const [cart,setCart] = useState(()=>JSON.parse(localStorage.getItem("cart")) || []);
+  
   return (
     <div className=" flex flex-col min-h-screen overflow-x-hidden">
         <Navbar cart={cart} />
@@ -22,6 +30,7 @@ const App = () => {
         <Route path="/kids" element={<Kids/>}/>
         <Route path={`/product/:id`} element={<Product cart={cart} setCart={setCart} />}/>
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart}/>}/>
+        <Route path="/checkout" element={<Checkout/>}/>
       </Routes>
     </div>
   )

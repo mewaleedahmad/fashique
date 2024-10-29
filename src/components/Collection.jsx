@@ -1,6 +1,6 @@
 import MainTitle from "./MainTitle";
 import { useState} from "react";
-import { ChevronRight, MoveLeft, MoveLeftIcon, Plus,SlidersHorizontal } from "lucide-react";
+import { MoveLeft,SlidersHorizontal } from "lucide-react";
 import { products } from "../assets/images/assets";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";

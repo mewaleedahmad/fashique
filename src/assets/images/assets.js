@@ -110,6 +110,8 @@ import menu_icon from './menu_icon.png'
 import kid_hero from './Kids_hero.webp'
 import men_hero from './Men_hero.webp'
 import women_hero from './Women_hero.webp'
+import visa_logo from "./visa_logo.png"
+import googlepay_logo from "./google-pay.png"
 
 export const assets = {
     cart_icon,
@@ -119,6 +121,8 @@ export const assets = {
     kid_hero,
     women_hero,
     men_hero,
+    visa_logo,
+    googlepay_logo
 }
 
 export const products = [
