@@ -116,7 +116,7 @@ const sortedProducts = filteredProducts.sort((a,b)=>{
           <div className="flex justify-end gap-4 text-xl lg:gap-0 flex-row  items-center">
             <div className=" mt-4 text-lg  ">
               <select value={sortOrder} onChange={(e)=>setSortOrder(e.target.value)} className="px-1 py-3  bg-lightPrimary outline-none shadow-sm rounded-md lg:text-md text-sm font-bold border-darkSecondary border">
-              <option  className="font-regular " selected>Sort By : Relevant </option>
+              <option  className="font-regular ">Sort By : Relevant </option>
               <option  className="font-regular ">Sort By : Low to High</option>
               <option  className="font-regular ">Sort By : High to Low </option>
             </select>

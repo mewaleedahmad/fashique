@@ -1,4 +1,4 @@
-import {Headset,CircleCheckBig,Repeat} from "lucide-react"
+import {Headset,CircleCheckBig,Repeat, Github} from "lucide-react"
 
 const Footer = () => {
   return (
@@ -7,9 +7,17 @@ const Footer = () => {
         {/* <h1 className="text-5xl font-extrabold  ">FASHIQUE</h1> */}
         <div className="flex items-center justify-between">
         <div className="flex w-[20%] flex-col gap-1 px-10 items-end ">
-          <a className="underline underline-offset-1"  href="https://github.com/Waleed-Gondal"  target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a className="underline underline-offset-1"  href="https://x.com/_Waleed_Gondal"  target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a className="underline underline-offset-1"  href="https://www.linkedin.com/in/waleed-ahmad-3489982a8/"  target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a 
+            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-lightPrimary text-darkPrimary hover:bg-darkPrimary hover:text-lightPrimary transition-all duration-300 shadow-md hover:shadow-lg"  
+            href="https://github.com/Waleed-Gondal"  
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Github size={20} />
+            <span>GitHub</span>
+          </a>
+          {/* <a className="underline underline-offset-1"  href="https://x.com/_Waleed_Gondal"  target="_blank" rel="noopener noreferrer">Twitter</a> */}
+          {/* <a className="underline underline-offset-1"  href="https://www.linkedin.com/in/waleed-ahmad-3489982a8/"  target="_blank" rel="noopener noreferrer">LinkedIn</a> */}
         </div>
         <div>
         <div className=" layout About flex gap-6 justify-between  text-center w-full  my-10">
@@ -37,10 +45,18 @@ const Footer = () => {
       <div className="Mobile-Footer  border-t border-darkSecondary text-darkPrimary">
       <div className=" flex flex-col pt-12 pb-6 justify-center items-center gap-4 md:hidden">
       {/* <h1 className="text-5xl font-extrabold text-center  ">FASHIQUE</h1> */}
-      <p className="flex items-center   gap-2 ">
-          <a className="underline text-sm  underline-offset-1" href="https://github.com/Waleed-Gondal" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a className="underline text-sm underline-offset-1" href="https://x.com/_Waleed_Gondal" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a className="underline text-sm underline-offset-1" href="https://www.linkedin.com/in/waleed-ahmad-3489982a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <p className="flex items-center gap-2">
+          <a 
+            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-lightPrimary text-darkPrimary hover:bg-darkPrimary hover:text-lightPrimary transition-all duration-300 shadow-md hover:shadow-lg"  
+            href="https://github.com/Waleed-Gondal" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Github size={20} />
+            <span>GitHub</span>
+          </a>
+          {/* <a className="underline text-sm underline-offset-1" href="https://x.com/_Waleed_Gondal" target="_blank" rel="noopener noreferrer">Twitter</a> */}
+          {/* <a className="underline text-sm underline-offset-1" href="https://www.linkedin.com/in/waleed-ahmad-3489982a8/" target="_blank" rel="noopener noreferrer">LinkedIn</a> */}
         </p>
        <p className="text-xs pt-4 px-6 text-justify ">The images used in this website is from <a className="underline underline-offset-2" href="https://outfitters.com.pk/" target="_blank" rel="noopener noreferrer">Outfitters</a> and only used for learning purpose.</p>
 

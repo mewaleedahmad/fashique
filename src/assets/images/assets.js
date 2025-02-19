@@ -134,7 +134,7 @@ export const products = [
         image: [mentop1],
         category: "Men",
         subCategory: "Topwear",
-        sizes: ["S", "M", "L"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: true
     },
     {
@@ -156,7 +156,7 @@ export const products = [
         image: [mentop3],
         category: "Men",
         subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -167,7 +167,7 @@ export const products = [
         image: [mentop4],
         category: "Men",
         subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -178,7 +178,7 @@ export const products = [
         image: [mentop5],
         category: "Men",
         subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -189,7 +189,7 @@ export const products = [
         image: [mentop6],
         category: "Men",
         subCategory: "Topwear",
-        sizes: ["S", "M", "L"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -200,7 +200,7 @@ export const products = [
         image: [mentop7],
         category: "Men",
         subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -211,7 +211,7 @@ export const products = [
         image: [mentop8],
         category: "Men",
         subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -222,7 +222,7 @@ export const products = [
         image: [mentop9],
         category: "Men",
         subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -233,7 +233,7 @@ export const products = [
         image: [mentop10],
         category: "Men",
         subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -244,7 +244,7 @@ export const products = [
         image: [mentop11],
         category: "Men",
         subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -255,7 +255,7 @@ export const products = [
         image: [mentop12],
         category: "Men",
         subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -266,7 +266,7 @@ export const products = [
         image: [menbottom1],
         category: "Men",
         subCategory: "Bottomwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -277,7 +277,7 @@ export const products = [
         image: [menbottom2],
         category: "Men",
         subCategory: "Bottomwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -288,7 +288,7 @@ export const products = [
         image: [menbottom3],
         category: "Men",
         subCategory: "Bottomwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -299,7 +299,7 @@ export const products = [
         image: [menbottom4],
         category: "Men",
         subCategory: "Bottomwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -310,7 +310,7 @@ export const products = [
         image: [menbottom5],
         category: "Men",
         subCategory: "Bottomwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -321,7 +321,7 @@ export const products = [
         image: [menbottom7],
         category: "Men",
         subCategory: "Bottomwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: true
     },
     {
@@ -332,7 +332,7 @@ export const products = [
         image: [menbottom8],
         category: "Men",
         subCategory: "Bottomwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -343,7 +343,7 @@ export const products = [
         image: [menbottom9],
         category: "Men",
         subCategory: "Bottomwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -354,7 +354,7 @@ export const products = [
         image: [menbottom10],
         category: "Men",
         subCategory: "Bottomwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -365,7 +365,7 @@ export const products = [
         image: [menbottom11],
         category: "Men",
         subCategory: "Bottomwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["S", "M", "L", "XL"],
         bestseller: false
     },
     {
@@ -376,7 +376,7 @@ export const products = [
         image: [menfoot1],
         category: "Men",
         subCategory: "Footwear",
-        sizes: ["7","8", "9", "10"],
+        sizes: ["7","8", "9", "10", "11"],
         bestseller: false
     },
     {
@@ -387,7 +387,7 @@ export const products = [
         image: [menfoot2],
         category: "Men",
         subCategory: "Footwear",
-        sizes: ["7","8", "9", "10"],
+        sizes: ["7","8", "9", "10", "11"],
         bestseller: false
     },
     {
@@ -398,7 +398,7 @@ export const products = [
         image: [menfoot3],
         category: "Men",
         subCategory: "Footwear",
-        sizes: ["7","8", "9", "10"],
+        sizes: ["7","8", "9", "10", "11"],
         bestseller: false
     },
     {
@@ -409,7 +409,7 @@ export const products = [
         image: [menfoot4],
         category: "Men",
         subCategory: "Footwear",
-        sizes: ["7","8", "9", "10"],
+        sizes: ["7","8", "9", "10", "11"],
         bestseller: false
     },
     {
@@ -420,7 +420,7 @@ export const products = [
         image: [menfoot5],
         category: "Men",
         subCategory: "Footwear",
-        sizes: ["7","8", "9", "10"],
+        sizes: ["7","8", "9", "10", "11"],
         bestseller: false
     },
     {
@@ -431,7 +431,7 @@ export const products = [
         image: [menfoot6],
         category: "Men",
         subCategory: "Footwear",
-        sizes: ["7","8", "9", "10"],
+        sizes: ["7","8", "9", "10", "11"],
         bestseller: false
     },
     {
@@ -442,7 +442,7 @@ export const products = [
         image: [menfoot7],
         category: "Men",
         subCategory: "Footwear",
-        sizes: ["7","8", "9", "10"],
+        sizes: ["7","8", "9", "10", "11"],
         bestseller: false
     },
     {
@@ -453,7 +453,7 @@ export const products = [
         image: [menfoot8],
         category: "Men",
         subCategory: "Footwear",
-        sizes: ["7","8", "9", "10"],
+        sizes: ["7","8", "9", "10", "11"],
         bestseller: false
     },
     {
@@ -464,7 +464,7 @@ export const products = [
         image: [menfoot9],
         category: "Men",
         subCategory: "Footwear",
-        sizes: ["7","8", "9", "10"],
+        sizes: ["7","8", "9", "10", "11"],
         bestseller: false
     },
     {
@@ -475,7 +475,7 @@ export const products = [
         image: [menfoot10],
         category: "Men",
         subCategory: "Footwear",
-        sizes: ["7","8", "9", "10"],
+        sizes: ["7","8", "9", "10", "11"],
         bestseller: true
     },
 
@@ -741,7 +741,7 @@ export const products = [
         image: [womenfoot1],
         category: "Women",
         subCategory: "Footwear",
-        sizes: ["7", "8", "9","10"],
+        sizes: ["7", "8", "9","10", "11"],
         bestseller: false
     },
     {
@@ -752,7 +752,7 @@ export const products = [
         image: [womenfoot2],
         category: "Women",
         subCategory: "Footwear",
-        sizes: ["7", "8", "9","10"],
+        sizes: ["7", "8", "9","10", "11"],
         bestseller: false
     },
     {
@@ -763,7 +763,7 @@ export const products = [
         image: [womenfoot3],
         category: "Women",
         subCategory: "Footwear",
-        sizes: ["7", "8", "9","10"],
+        sizes: ["7", "8", "9","10", "11"],
         bestseller: false
     },
     {
@@ -774,7 +774,7 @@ export const products = [
         image: [womenfoot4],
         category: "Women",
         subCategory: "Footwear",
-        sizes: ["7", "8", "9","10"],
+        sizes: ["7", "8", "9","10", "11"],
         bestseller: false
     },
     {
@@ -785,7 +785,7 @@ export const products = [
         image: [womenfoot5],
         category: "Women",
         subCategory: "Footwear",
-        sizes: ["7", "8", "9","10"],
+        sizes: ["7", "8", "9","10", "11"],
         bestseller: true
     },
     {
@@ -796,7 +796,7 @@ export const products = [
         image: [womenfoot6],
         category: "Women",
         subCategory: "Footwear",
-        sizes: ["7", "8", "9","10"],
+        sizes: ["7", "8", "9","10", "11"],
         bestseller: false
     },
     {
@@ -807,7 +807,7 @@ export const products = [
         image: [womenfoot7],
         category: "Women",
         subCategory: "Footwear",
-        sizes: ["7", "8", "9","10"],
+        sizes: ["7", "8", "9","10", "11"],
         bestseller: false
     },
     {
@@ -818,7 +818,7 @@ export const products = [
         image: [womenfoot8],
         category: "Women",
         subCategory: "Footwear",
-        sizes: ["7", "8", "9","10"],
+        sizes: ["7", "8", "9","10", "11"],
         bestseller: false
     },
     
