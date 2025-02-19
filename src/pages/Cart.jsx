@@ -28,7 +28,7 @@ const Cart = ({cart,setCart}) => {
     .map((item) => {
       const cartItemQuantity = localCartItemsQuantity.find(
         (localItem) => localItem.id === item._id
-      ).quantity;
+      )?.quantity || 1;
       return item.price * cartItemQuantity;
     })
     .reduce((prev, currentPrice) => prev + currentPrice, 0);
@@ -90,10 +90,10 @@ const Cart = ({cart,setCart}) => {
           {cartItems.map((item) => {
             const cartItemSize = localCartItemsSize.find(
               (localItem) => localItem.id === item._id
-            ).selectedSize  ;
+            )?.selectedSize || "N/A";
             const cartItemQuantity = localCartItemsQuantity.find(
               (localItem) => localItem.id === item._id
-            ).quantity  ;
+            )?.quantity || 1;
          
             return (
               <div key={item._id} className="flex items-center gap-2 lg:gap-4">
@@ -108,7 +108,7 @@ const Cart = ({cart,setCart}) => {
                   <p className="text-lg leading-none capitalize lg:leading-7">{item.name}</p>
                   <div className="flex items-center gap-4 lg:gap-8">
                     <p className="text-sm  bg-lightSecondary border  border-darkSecondary rounded-sm px-2 lg:px-3 lg:py-1 py-[3px] text-center">
-                      {cartItemSize || "N/A"}
+                      {cartItemSize}
                     </p>
                     <div className="flex items-center gap-4 lg:gap-4 ">
 
