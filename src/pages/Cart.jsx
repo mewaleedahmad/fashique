@@ -12,6 +12,7 @@ const Cart = ({cart,setCart}) => {
 
   const localCartItemsId = cart ? cart.filter((item) => item.id) : [];
   const localCartItemsSize = cart ? cart.filter((item) => item.selectedSize) : [];
+  const localCartItemsQuantity = cart ? cart.filter((item) => item.quantity) : [];
   const filteredProducts = products.filter((prod) => prod._id);
   const cartItems = filteredProducts.filter((cartItem) =>
     localCartItemsId.some((localItem) => localItem.id === cartItem._id)
@@ -24,8 +25,13 @@ const Cart = ({cart,setCart}) => {
   };
 
   const subTotalPrice = cartItems
-  .map((item) => item.price)
-  .reduce((prev, currentPrice) => prev + currentPrice, 0);
+    .map((item) => {
+      const cartItemQuantity = localCartItemsQuantity.find(
+        (localItem) => localItem.id === item._id
+      ).quantity;
+      return item.price * cartItemQuantity;
+    })
+    .reduce((prev, currentPrice) => prev + currentPrice, 0);
 
   useEffect(() => {
     const fetchCart = JSON.parse(localStorage.getItem("cart"));
@@ -33,13 +39,43 @@ const Cart = ({cart,setCart}) => {
   }, [setCart]);
 
   useEffect(() => {
-    setSubTotal(subTotalPrice );
-    SetTotal(Subtotal + shippingCharges);
-  }, [total, Subtotal, subTotalPrice,]);
+    setSubTotal(subTotalPrice);
+    SetTotal(subTotalPrice + shippingCharges);
+  }, [subTotalPrice, shippingCharges]);
 
   useEffect(()=>{
    (Subtotal !== null || 0)  &&  localStorage.setItem("subTotal",Subtotal)
   })
+  // console.log(localCartItemsId)
+
+  const handleIncrement = (id) => {
+    const updatedCart = cart.map(item => {
+      if (item.id === id) {
+        return {
+          ...item,
+          quantity: item.quantity < 10 ? item.quantity + 1 : item.quantity
+        };
+      }
+      return item;
+    });
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setCart(updatedCart);
+  };
+
+  const handleDecrement = (id) => {
+    const updatedCart = cart.map(item => {
+      if (item.id === id) {
+        return {
+          ...item,
+          quantity: item.quantity > 1 ? item.quantity - 1 : item.quantity
+        };
+      }
+      return item;
+    });
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setCart(updatedCart);
+  };
+  
 
 
   return (
@@ -54,7 +90,10 @@ const Cart = ({cart,setCart}) => {
           {cartItems.map((item) => {
             const cartItemSize = localCartItemsSize.find(
               (localItem) => localItem.id === item._id
-            ).selectedSize;
+            ).selectedSize  ;
+            const cartItemQuantity = localCartItemsQuantity.find(
+              (localItem) => localItem.id === item._id
+            ).quantity  ;
          
             return (
               <div key={item._id} className="flex items-center gap-2 lg:gap-4">
@@ -67,17 +106,25 @@ const Cart = ({cart,setCart}) => {
                 </div>
                 <div className="div-2 flex flex-grow  w-full flex-col gap-2 ">
                   <p className="text-lg leading-none capitalize lg:leading-7">{item.name}</p>
-                  <div className="flex items-center gap-2 lg:gap-4">
-                    <p className="text-sm bg-lightSecondary border  border-darkSecondary rounded-sm px-2 lg:px-3 lg:py-1 py-[3px] text-center">
+                  <div className="flex items-center gap-4 lg:gap-8">
+                    <p className="text-sm  bg-lightSecondary border  border-darkSecondary rounded-sm px-2 lg:px-3 lg:py-1 py-[3px] text-center">
                       {cartItemSize || "N/A"}
                     </p>
+                    <div className="flex items-center gap-4 lg:gap-4 ">
+
+                    <p className="text-base ">Quantity</p>
+                      <button onClick={()=>handleDecrement(item._id)} className=" text-base hover:bg-darkPrimary hover:text-lightPrimary   bg-lightSecondary border text-center align-middle leading-4  border-darkSecondary rounded-full w-4 h-4  ">-</button>
+                      <p className="font-bold text-sm">{cartItemQuantity}</p>
+                      <button onClick={()=>handleIncrement(item._id)} className=" text-base hover:bg-darkPrimary hover:text-lightPrimary  bg-lightSecondary border text-center align-middle leading-4 border-darkSecondary rounded-full w-4 h-4  ">+</button>
+                    </div>
+          
                   </div>
                 </div>
 
                 <div className="div-3 ">
                   <div className="flex lg:flex-row  w-full items-center justify-between flex-col-reverse lg:gap-20 lg:ps-20 gap-4">
                     <p className="text-sm lg:text-[1rem] font-bold lg:ps-20 ">
-                      {item.price}&nbsp;PKR
+                      {item.price * cartItemQuantity}&nbsp;PKR
                     </p>
                     <button
                       className="btn btn-ghost btn-circle  hover:bg-lightSecondary"

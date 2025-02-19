@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 const Product = ({cart,setCart}) => {
   const { id } = useParams();
   const [selectedSize, setSelectedSize] = useState("");
+  const [quantity,setQuantity] = useState(1)
   const [sizeNotSelectedError, setSizeNotSelectedError] = useState(false);
 
   const notifyAdded = () => toast("Added To Cart");
@@ -15,7 +16,7 @@ const Product = ({cart,setCart}) => {
   const product = products.find((product) => product._id === id);
 
   const addToCart = () => {
-    const item = { id, selectedSize};
+    const item = { id, selectedSize ,quantity};
     if(cart.find(i => i.id === id)){
       notifyError();
     }else{
@@ -26,7 +27,20 @@ const Product = ({cart,setCart}) => {
     const fetchCart = JSON.parse(localStorage.getItem("cart"));
     setCart(fetchCart);
   }
- 
+
+  const handleIncrement = ()=>{
+    if(quantity === 10 )return 
+      else{
+         setQuantity((prev)=> prev + 1)
+    }
+  } 
+
+  const handleDecrement = ()=> {
+    if(quantity === 1)return 
+      else{
+         setQuantity((prev)=> prev - 1)
+    }
+  }
   return (
     <div className="w-full layout   lg:flex gap-6 mt-10">
       <div  className="image-section lg:w-[35%]  w-full rounded-md overflow-hidden ">
@@ -47,6 +61,12 @@ const Product = ({cart,setCart}) => {
             </button>
           ))}
         </div>
+        <p className="font-bold text-base mt-4">Quantity</p>
+        <div className="flex items-center gap-8 lg:gap-8">
+          <button onClick={()=>handleDecrement()} className=" w-6 h-6 hover:bg-darkPrimary hover:text-lightPrimary bg-lightSecondary border text-center   border-darkSecondary rounded-full">-</button>
+          <p className="font-bold text-base">{quantity}</p>
+          <button onClick={()=>handleIncrement()} className=" w-6 h-6 hover:bg-darkPrimary hover:text-lightPrimary bg-lightSecondary border text-center   border-darkSecondary rounded-full">+</button>
+        </div>
     
         <div>
           <ToastContainer
@@ -64,7 +84,7 @@ const Product = ({cart,setCart}) => {
             ADD TO CART
           </button>
           {sizeNotSelectedError && 
-            <p className="pt-2 px-6 text-red-800 text-sm font-semibold">Select Any Size</p>
+            <p className="pt-4 px-2 text-red-800 text-sm font-semibold ">Select Any Size</p>
           }
         </div>
         
