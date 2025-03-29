@@ -69,7 +69,7 @@ const Navbar = ({cart}) => {
               <div className="menu-btn overflow-hidden">
               <img src={assets.menu_icon} onClick={()=>setIsMenuVisible(true)} className={`${isMenuVisible ? "hidden" :"flex"} flex sm:hidden cursor-pointer w-5`}/>
               <div className={`mobile-menu ${isMenuVisible ? "flex h-screen" : "hidden"} transition-transform duration-300 ease overflow-hidden gap-2 flex-col items-start absolute top-0 font-medium py-4 left-0 block z-50  w-full bg-lightPrimary text-darkPrimary `}>
-                <div  className="flex justify-start items-center gap-1 px-3 lg:px-5 pb-1 " onClick={()=>setIsMenuVisible(false)}>
+                <div  className="flex justify-start cursor-pointer items-center gap-1 px-3 lg:px-5 pb-1 " onClick={()=>setIsMenuVisible(false)}>
                 <ChevronLeft />
                 <h3 className="text-lg ">Back</h3>
                 </div>
