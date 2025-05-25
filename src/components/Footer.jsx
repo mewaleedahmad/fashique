@@ -22,19 +22,19 @@ const Footer = () => {
         <div>
         <div className=" layout About flex gap-6 justify-between  text-center w-full  my-10">
         <div className="flex flex-col items-center justify-center gap-1">
-          <Repeat size={32}/>
-          <p className="text-darkPrimary text-md font-bold mt-2">Exchange Policy</p>
-          <p className="text-darkSecondary text-xs font-medium">We offer hassle free exchange policy</p>
+          <Repeat size={34}/>
+          <p className="text-darkPrimary text-lg font-bold mt-2">Exchange Policy</p>
+          <p className="text-darkSecondary text-sm font-medium">We offer hassle free exchange policy</p>
         </div>
         <div className="flex flex-col items-center justify-center gap-1">
-          <CircleCheckBig size={32}/>
-          <p className="text-darkPrimary text-md font-bold mt-2">Return Policy</p>
-          <p className="text-darkSecondary text-xs font-medium">We provide 7 days free return policy</p>
+          <CircleCheckBig size={34}/>
+          <p className="text-darkPrimary text-lg font-bold mt-2">Return Policy</p>
+          <p className="text-darkSecondary text-sm font-medium">We provide 7 days free return policy</p>
         </div>
         <div className="flex flex-col items-center justify-center gap-1">
-          <Headset size={32}/>
-          <p className="text-darkPrimary text-md font-bold mt-2">Customer Support</p>
-          <p className="text-darkSecondary text-xs font-medium">We provide 24/7 customer support</p>
+          <Headset size={34}/>
+          <p className="text-darkPrimary text-lg font-bold mt-2">Customer Support</p>
+          <p className="text-darkSecondary text-sm font-medium">We provide 24/7 customer support</p>
         </div>
       </div>
         </div>

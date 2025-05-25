@@ -11,20 +11,20 @@ const Marquee = ({ className }) => {
         className={`w-full gap-6 first items-center text-nowrap flex ${className}`}
         style={{ display: 'flex' }}
       >
-        <div className="flex gap-6">
-          <h4 className="text-[2.5rem] uppercase ">Quality you can trust</h4>
-          <h4 className="text-[2.5rem] uppercase ">get ready to stand out</h4>
-          <h4 className="text-[2.5rem] uppercase ">unlock your style potential</h4>
+        <div className="flex gap-6 py-1">
+          <h4 className="text-[3rem] uppercase ">Quality you can trust</h4>
+          <h4 className="text-[3rem] uppercase ">get ready to stand out</h4>
+          <h4 className="text-[3rem] uppercase ">unlock your style potential</h4>
         </div>
-        <div className="flex gap-6">
-          <h4 className="text-[2.5rem] uppercase ">Quality you can trust</h4>
-          <h4 className="text-[2.5rem] uppercase ">get ready to stand out</h4>
-          <h4 className="text-[2.5rem] uppercase ">unlock your style potential</h4>
+        <div className="flex gap-6 py-1">
+          <h4 className="text-[3rem] uppercase ">Quality you can trust</h4>
+          <h4 className="text-[3rem] uppercase ">get ready to stand out</h4>
+          <h4 className="text-[3rem] uppercase ">unlock your style potential</h4>
         </div>
-        <div className="flex gap-6">
-          <h4 className="text-[2.5rem] uppercase ">Quality you can trust</h4>
-          <h4 className="text-[2.5rem] uppercase ">get ready to stand out</h4>
-          <h4 className="text-[2.5rem] uppercase ">unlock your style potential</h4>
+        <div className="flex gap-6 py-1">
+          <h4 className="text-[3rem] uppercase ">Quality you can trust</h4>
+          <h4 className="text-[3rem] uppercase ">get ready to stand out</h4>
+          <h4 className="text-[3rem] uppercase ">unlock your style potential</h4>
         </div>
 
         
