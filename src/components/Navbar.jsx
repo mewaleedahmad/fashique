@@ -37,19 +37,19 @@ const Navbar = ({cart}) => {
   },[cart])
   
   return (
-    <div className="flex layout  justify-between items-center pt-4  ">
+    <div className="flex layout  justify-between items-center pt-5 pb-1  ">
 
         <div className="nav-logo">
           <Link to="/" className="cursor-pointer">
-            <h1 className="font-bold text-xl md:text-2xl  xl:text-3xl text-darkPrimary">Fashique</h1>
+            <h1 className="font-bold text-2xl md:text-3xl  xl:text-4xl text-darkPrimary">Fashique</h1>
           </Link>
         </div>
 
         <div className="nav-links lg:pe-14">
-            <ul className="hidden sm:flex gap-5 justify-center items-baseline text-sm lg:text-md xl:text-lg font-medium text-darkPrimary">
+            <ul className="hidden sm:flex gap-5 justify-center items-baseline text-sm lg:text-lg xl:text-xl   text-darkPrimary">
               {NavLinks.map((item)=>(
                 <NavLink  to={item.route} key={item.id} className="flex flex-col  justify-center  items-center">
-                <motion.h3 whileHover={{scale:1.1}} className=" pb-1">{item.link}</motion.h3>
+                <motion.h3 whileHover={{scale:1.1}} className=" pb-1 ">{item.link}</motion.h3>
                 <hr className="w-3/4 bg-darkPrimary  h-[2.2px] hidden "/>
                 </NavLink>
               ))}
@@ -60,7 +60,7 @@ const Navbar = ({cart}) => {
           <div className="flex justify-center items-center gap-5 py-4 ">
 
               <Link to={"/cart"} className="cart relative ">
-              <img src={assets.cart_icon} className="w-5 relative cursor-pointer" alt="cart"/>
+              <img src={assets.cart_icon} className="w-6 relative cursor-pointer" alt="cart"/>
               <div className="absolute bottom-[-7px] right-[-3px] flex justify-center items-end bg-black text-white  aspect-square w-4 h-4 rounded-full text-[10px]">
                 {cartCount}
                 </div>
